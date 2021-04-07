@@ -24,7 +24,7 @@
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
                                 <td>{{$category->slug}}</td>
-                                <td>{{$category->parent_id}}</td>
+                                <td>{{$category->parent ? $category->parent->name : ''}}</td>
                                 <td>
                                     <a href="{{url('admin/categories/'. $category->id .'/edit')}}" class="btn btn-warning btn-sm">edit</a>
 
@@ -36,7 +36,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="5">Tidak ditemukan data</td>
+                                    <td colspan="5">Tidak ditemukan data.</td>
                                 </tr>
                                 @endforelse
                             </tbody>

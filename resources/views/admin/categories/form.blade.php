@@ -12,7 +12,7 @@
             <div class="col-lg-6">
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
-                        <h2>{{$formTitle}} Category</h2>
+                        <h2>{{$formTitle}} Kategori</h2>
                     </div>
                     <div class="card-body">
                         @include('admin.partials.flash',['$errors'=>$errors])
@@ -25,6 +25,10 @@
                             <div class="form-group">
                                 {!!Form::label('name','Name')!!}
                                 {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'category name'])!!}
+                            </div>
+                            <div class="form-group">
+                                {!!Form::label('parent_id','Parent')!!}
+                                {!!General::selectMultiLevel('parent_id',$categories,['class'=>'form-control','selected'=>!empty((old('parent_id')) ? old('parent_id') : !empty($category['parent_id'])) ? $category['parent_id'] : '','placeholder'=>'-- Pilih Kategori --'])!!}
                             </div>
                             <div class="form-footer pt-5 border-top">
                                 <button type="submit" class="btn btn-primary btn-default">Simpan</div>
