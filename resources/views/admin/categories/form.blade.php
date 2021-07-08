@@ -31,7 +31,8 @@
                                 {!!General::selectMultiLevel('parent_id',$categories,['class'=>'form-control','selected'=>!empty((old('parent_id')) ? old('parent_id') : !empty($category['parent_id'])) ? $category['parent_id'] : '','placeholder'=>'-- Pilih Kategori --'])!!}
                             </div>
                             <div class="form-footer pt-5 border-top">
-                                <button type="submit" class="btn btn-primary btn-default">Simpan</div>
+                                <button type="submit" class="btn btn-primary btn-default">Simpan</button>
+                                <a href="{{url('admin/categories')}}" class="btn btn-secondary btn-default">Kembali</a>
                             </div>
                                 {!!Form::close()!!}
                     </div>

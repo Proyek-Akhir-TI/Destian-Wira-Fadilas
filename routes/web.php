@@ -18,9 +18,13 @@ Route::get('/', function () {
 });
 
 Route::group(
-    ['namespace' => 'Admin', 'prefix' => 'admin'],
+    ['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth']],
     function (){
         Route::get('dashboard','DashboardController@index');
         Route::resource('categories','CategoryController');
+        Route::resource('products','ProductController');
     }
 );
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
