@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameColumnInProductsTable extends Migration
+class AddParentIdAndTypeToProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,10 @@ class RenameColumnInProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->renameColumn('name', 'name');
-            $table->renameColumn('price', 'price');
+            $table->unsignedBigInteger('parent_id')->after('id')->nullable();
+            $table->string('type')->after('sku');
+
+            $table->foreign('parent_id')->references('id')->on('products');
         });
     }
 
@@ -27,7 +29,10 @@ class RenameColumnInProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropForeign('products_parent_id_foreign');
+            $table->dropColumn('parent_id');
+            $table->dropColumn('type');
+             
         });
     }
 }

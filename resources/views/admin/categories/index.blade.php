@@ -13,10 +13,10 @@
                         <table class="table table-bordered table-stripped">
                             <thead>
                                 <th>#</th>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Slug</th>
                                 <th>Parent</th>
-                                <th>Action</th>
+                                <th>Tindakan</th>
                             </thead>
                             <tbody>
                                 @forelse ($categories as $category)
@@ -26,25 +26,33 @@
                                 <td>{{$category->slug}}</td>
                                 <td>{{$category->parent ? $category->parent->name : ''}}</td>
                                 <td>
+                                    
+                                @can('edit_categories')
                                     <a href="{{url('admin/categories/'. $category->id .'/edit')}}" class="btn btn-warning btn-sm">edit</a>
+                                @endcan
 
+                                @can('delete_categories')
                                     {!!Form::open(['url' => 'admin/categories/'.$category->id, 'class' => 'delete', 'style' => 'display:inline-block'])!!}
                                     {!!Form::hidden('_method', 'DELETE')!!}
                                     {!!Form::submit('remove', ['class' => 'btn btn-danger btn-sm'])!!}
                                     {!!Form::close()!!}
+                                @endcan
                                 </td>
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="5">Tidak ditemukan data.</td>
+                                    <td colspan="5">Tidak ada data yang ditemukan.</td>
                                 </tr>
                                 @endforelse
                             </tbody>
                         </table>
                         {{$categories->links()}}
                     </div>
-                    <div class="card-footer text-right">
-                        <a href="{{url('admin/categories/create')}}" class="btn btn-primary">Tambahkan</a>
+
+                    @can('add_categories')
+                        <div class="card-footer text-right">
+                            <a href="{{url('admin/categories/create')}}" class="btn btn-primary">Tambahkan</a>
+                    @endcan
                     </div>
                 </div>
             </div>

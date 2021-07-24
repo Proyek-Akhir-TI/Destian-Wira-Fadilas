@@ -4,7 +4,7 @@
 
 
 @php
-    $formTitle = !empty($category)? 'Update' : 'New'
+    $formTitle = !empty($category)? 'Update' : 'Kategori'
 @endphp
 
     <div class="content">
@@ -12,7 +12,7 @@
             <div class="col-lg-6">
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
-                        <h2>{{$formTitle}} Kategori</h2>
+                        <h2>{{$formTitle}} Baru</h2>
                     </div>
                     <div class="card-body">
                         @include('admin.partials.flash',['$errors'=>$errors])
@@ -23,11 +23,11 @@
                             {!!Form::open(['url'=>'admin/categories'])!!}
                         @endif
                             <div class="form-group">
-                                {!!Form::label('name','Name')!!}
-                                {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'category name'])!!}
+                                {!!Form::label('name','Nama')!!}
+                                {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Nama kategori'])!!}
                             </div>
                             <div class="form-group">
-                                {!!Form::label('parent_id','Parent')!!}
+                                {!!Form::label('parent_id','Induk')!!}
                                 {!!General::selectMultiLevel('parent_id',$categories,['class'=>'form-control','selected'=>!empty((old('parent_id')) ? old('parent_id') : !empty($category['parent_id'])) ? $category['parent_id'] : '','placeholder'=>'-- Pilih Kategori --'])!!}
                             </div>
                             <div class="form-footer pt-5 border-top">

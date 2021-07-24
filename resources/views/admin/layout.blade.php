@@ -13,20 +13,22 @@
   <link rel="stylesheet" href="{{asset('admin/assets/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin/assets/dist/css/adminlte.min.css')}}">
+  
 </head>
-<body class="hold-transition sidebar-mini">
-<!-- Site wrapper -->
+<body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
+
 <div class="wrapper">
+<!-- /.navbar -->
+@include('admin.partials.sidebar')
+
+<!-- Site wrapper -->
+<div class="page-wrapper">
   <!-- Navbar -->
   @include('admin.partials.header')
-  <!-- /.navbar -->
-
-  @include('admin.partials.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
       @yield('content')
-    
   </div>
   <!-- /.content-wrapper -->
 
@@ -37,6 +39,7 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+</div>
 </div>
 <!-- ./wrapper -->
 
@@ -52,6 +55,24 @@
   $(".delete").on("submit",function(){
   return confirm("Apakah Anda yakin ingin menghapusnya?");
   });
+
+  function showHideConfigurableAttributes(){
+    var productType = $(".product-type").val();
+
+    if (productType == 'configurable'){
+      $(".configurable-attributes").show();
+    } else{
+      $(".configurable-attributes").hide();
+			}
+		}
+
+		$(function(){
+			showHideConfigurableAttributes();
+			$(".product-type").change(function() {
+				showHideConfigurableAttributes();
+			});
+		});
+
 </script>
 </body>
 </html>
