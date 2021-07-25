@@ -28,13 +28,13 @@
                                 <td>
                                     
                                 @can('edit_categories')
-                                    <a href="{{url('admin/categories/'. $category->id .'/edit')}}" class="btn btn-warning btn-sm">edit</a>
+                                    <a href="{{url('admin/categories/'. $category->id .'/edit')}}" class="btn btn-warning btn-sm">Ubah</a>
                                 @endcan
 
                                 @can('delete_categories')
                                     {!!Form::open(['url' => 'admin/categories/'.$category->id, 'class' => 'delete', 'style' => 'display:inline-block'])!!}
                                     {!!Form::hidden('_method', 'DELETE')!!}
-                                    {!!Form::submit('remove', ['class' => 'btn btn-danger btn-sm'])!!}
+                                    {!!Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm'])!!}
                                     {!!Form::close()!!}
                                 @endcan
                                 </td>
@@ -51,7 +51,7 @@
 
                     @can('add_categories')
                         <div class="card-footer text-right">
-                            <a href="{{url('admin/categories/create')}}" class="btn btn-primary">Tambahkan</a>
+                            <a href="{{url('admin/categories/create')}}" class="btn btn-primary">Tambahkan Baru</a>
                     @endcan
                     </div>
                 </div>
