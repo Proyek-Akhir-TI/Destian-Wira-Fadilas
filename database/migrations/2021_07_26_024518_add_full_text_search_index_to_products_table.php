@@ -13,9 +13,7 @@ class AddFullTextSearchIndexToProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
-        });
+        DB::statement('ALTER TABLE products ADD FULLTEXT search (name,slug,description)');
     }
 
     /**
@@ -26,7 +24,7 @@ class AddFullTextSearchIndexToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropIndex('search');
         });
     }
 }
