@@ -48,5 +48,10 @@
         <script src="{{ asset('themes/ezone/assets/js/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('themes/ezone/assets/js/plugins.js') }}"></script>
         <script src="{{ asset('themes/ezone/assets/js/main.js') }}"></script>
+        <script>
+            $(".delete").on("click", function () {
+                return confirm("Apakah Anda yakin ingin menghapus?");
+            });
+        </script>
     </body>
 </html>

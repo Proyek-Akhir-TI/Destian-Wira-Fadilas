@@ -69,20 +69,21 @@
 						<div class="details-price">
 							<span>{{ number_format($product->price_label()) }}</span>
 						</div>
-						<p>{{ $product->short_description }}</p>
+						
 						{!! Form::open(['url' => 'carts']) !!}
+							{{ Form::hidden('product_id', $product->id) }}
 							@if ($product->type == 'configurable')
 								<div class="quick-view-select">
 									<div class="select-option-part">
 										<label>Ukuran*</label>
-										{!! Form::select('ukuran', $ukuran , null, ['class' => 'select', 'placeholder' => '- Pilihan -']) !!}
+										{!! Form::select('ukuran', $ukuran , null, ['class' => 'select', 'placeholder' => '- Pilihan -', 'required' => true]) !!}
 									</div>
 								</div>
 							@endif
 
 							<div class="quickview-plus-minus">
 								<div class="cart-plus-minus">
-									{!! Form::text('stock', 1, ['class' => 'cart-plus-minus-box', 'placeholder' => 'stock']) !!}
+									{!! Form::number('stock', 1, ['class' => 'cart-plus-minus-box', 'placeholder' => 'stock', 'min' => 1]) !!}
 								</div>
 								<div class="quickview-btn-cart">
 									<button type="submit" class="submit contact-btn btn-hover">tambahkan ke keranjang</button>
