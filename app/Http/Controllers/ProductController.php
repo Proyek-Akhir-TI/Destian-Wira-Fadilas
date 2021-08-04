@@ -32,11 +32,11 @@ class ProductController extends Controller
                                 })->orderBy('name', 'asc')->get();
 
         $this->data['sorts'] = [
-            url('products') => 'Default',
-            url('products?sort=price-asc') => 'Price - Low to High',
-            url('products?sort=price-desc') => 'Price - High to Low',
-            url('products?sort=created_at-desc') => 'Newest to Oldest',
-            url('products?sort=created_at-asc') => 'Oldest to Newest',
+            url('products') => 'Standar',
+            url('products?sort=price-asc') => 'Harga - Rendah ke Tinggi',
+            url('products?sort=price-desc') => 'Harga - Tinggi ke Rendah',
+            url('products?sort=created_at-desc') => 'Terbaru ke Terdahulu',
+            url('products?sort=created_at-asc') => 'Terdahulu ke Terbaru',
         ];
 
         $this->data['selectedSort'] = url('products');

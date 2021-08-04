@@ -1,7 +1,7 @@
 <div class="shop-sidebar mr-50">
     <form method="GET" action="{{ url('products')}}">
 		<div class="sidebar-widget mb-40">
-			<h3 class="sidebar-title">Filter by Price</h3>
+			<h3 class="sidebar-title">Urutkan sesuai harga</h3>
 			<div class="price_filter">
 				<div id="slider-range"></div>
 				<div class="price_slider_amount">
@@ -11,14 +11,14 @@
 						<input type="hidden" id="productMinPrice" value="{{ $minPrice }}"/>
 						<input type="hidden" id="productMaxPrice" value="{{ $maxPrice }}"/>
 					</div>
-					<button type="submit">Filter</button> 
+					<button type="submit">Urutkan</button> 
 				</div>
 			</div>
 		</div>
     </form>
     @if ($categories)
 		<div class="sidebar-widget mb-45">
-			<h3 class="sidebar-title">Categories</h3>
+			<h3 class="sidebar-title">Kategori</h3>
 			<div class="sidebar-categories">
 				<ul>
 					@foreach ($categories as $category)
@@ -31,7 +31,7 @@
     
     @if ($ukurans)
 		<div class="sidebar-widget mb-40">
-			<h3 class="sidebar-title">size</h3>
+			<h3 class="sidebar-title">ukuran</h3>
 			<div class="product-size">
 				<ul>
 					@foreach ($ukurans as $ukuran)

@@ -5,13 +5,13 @@
             <div class="header-bottom-wrapper">
                 <div class="logo-2 furniture-logo ptb-30">
                     <a href="/">
-                        <img src="{{ asset('themes/ezone/assets/img/logo/2.png') }}" alt="">
+                        <img src="{{ asset('themes/ezone/assets/img/logo/Hi2.png') }}" alt="">
                     </a>
                 </div>
                 <div class="menu-style-2 furniture-menu menu-hover">
                     <nav>
                         <ul>
-                            <li><a href="/">home</a>
+                            <li><a href="/">beranda</a>
                                 <ul class="single-dropdown">
                                     <li><a href="index.html">Fashion</a></li>
                                     <li><a href="index-fashion-2.html">Fashion style 2</a></li>
@@ -26,19 +26,8 @@
                                     <li><a href="index-sports.html">sports</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">pages</a>
-                                <ul class="single-dropdown">
-                                    <li><a href="about-us.html">about us</a></li>
-                                    <li><a href="menu-list.html">menu list</a></li>
-                                    <li><a href="login.html">login</a></li>
-                                    <li><a href="register.html">register</a></li>
-                                    <li><a href="cart.html">cart page</a></li>
-                                    <li><a href="checkout.html">checkout</a></li>
-                                    <li><a href="wishlist.html">wishlist</a></li>
-                                    <li><a href="contact.html">contact</a></li>
-                                </ul>
                             </li>
-                            <li><a href="{{ url('products') }}">shop</a>
+                            <li><a href="{{ url('products') }}">produk</a>
                                 <div class="category-menu-dropdown shop-menu">
                                     <div class="category-dropdown-style category-common2 mb-30">
                                         <h4 class="categories-subtitle"> shop layout</h4>
@@ -75,7 +64,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="blog.html">blog</a>
+                            <li><a href="blog.html">tentang kami</a>
                                 <ul class="single-dropdown">
                                     <li><a href="blog.html">blog 3 colunm</a></li>
                                     <li><a href="blog-2-col.html">blog 2 colunm</a></li>
@@ -84,7 +73,7 @@
                                     <li><a href="blog-details-sidebar.html">blog details 2</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">contact</a></li>
+                            <li><a href="contact.html">kontak</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -165,10 +154,10 @@
                 <div class="furniture-login">
                 <ul>
 						@guest
-							<li>Get Access: <a href="{{ url('login') }}">Login</a></li>
-							<li><a href="{{ url('register') }}">Register</a></li>
+							<li>Akun : <a href="{{ url('login') }}">Masuk</a></li>
+							<li><a href="{{ url('register') }}">Daftar</a></li>
 						@else
-							<li>Hello: <a href="{{ url('users/profile') }}">{{ Auth::user()->first_name }}</a></li>
+							<li>Halo: <a href="{{ url('users/profile') }}">{{ Auth::user()->first_name }}</a></li>
 							<a href="{{ route('logout') }}"
 								onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">
@@ -183,7 +172,7 @@
                 </div>
                 <div class="furniture-search">
                     <form action="{{url('products')}}" method="GET">
-                        <input placeholder="I am Searching for . . ." type="text" name="q" value="{{isset ($q) ? q: null}}">
+                        <input placeholder="Pencarian . . ." type="text" name="q" value="{{isset ($q) ? q: null}}">
                         <button>
                             <i class="ti-search"></i>
                         </button>
@@ -191,8 +180,8 @@
                 </div>
                 <div class="furniture-wishlist">
                     <ul>
-                        <li><a data-toggle="modal" data-target="#exampleCompare" href="#"><i class="ti-reload"></i> Compare</a></li>
-                        <li><a href="wishlist.html"><i class="ti-heart"></i> Wishlist</a></li>
+                        <li><a data-toggle="modal" data-target="#exampleCompare" href="#"><i class="ti-reload"></i> Perbandingan</a></li>
+                        <li><a href="wishlist.html"><i class="ti-heart"></i> Daftar Belanja</a></li>
                     </ul>
                 </div>
             </div>
