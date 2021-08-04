@@ -18,4 +18,19 @@ class ProductInventory extends Model
     {
         return $this->belongsTo('App\Models\Product');
     }
+
+    /**
+	 * Reduce stock product
+	 *
+	 * @param int $productId product ID
+	 * @param int $stock       stock product
+	 *
+	 * @return void
+	 */
+	public static function reduceStock($productId, $stock)
+	{
+		$inventory = self::where('product_id', $productId)->firstOrFail();
+		$inventory->stock = $inventory->stock - $stock;
+		$inventory->save();
+	}
 }

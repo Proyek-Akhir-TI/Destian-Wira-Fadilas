@@ -621,9 +621,9 @@
     /*----------------------------
     	Cart Plus Minus Button
     ------------------------------ */
-    $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
-    $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
-    $(".qtybutton").on("click", function() {
+    $(".cart-plus-minus").prepend('<div class="dec stockbutton">-</div>');
+    $(".cart-plus-minus").append('<div class="inc stockbutton">+</div>');
+    $(".stockbutton").on("click", function() {
         var $button = $(this);
         var oldValue = $button.parent().find("input").val();
         if ($button.text() == "+") {

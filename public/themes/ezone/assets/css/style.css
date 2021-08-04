@@ -6704,7 +6704,7 @@ h1.cart-heading {
 .table-content table td.product-remove i:hover {
     color: #050035;
 }
-.table-content table td.product-quantity {
+.table-content table td.product-stock {
     width: 180px;
 }
 .table-content table td.product-remove {
@@ -9494,7 +9494,7 @@ a.bundle-btn {
     background: rgba(0, 0, 0, 0) url("../../assets/img/icon-img/4.png") no-repeat scroll right 20px center;
     text-transform: capitalize;
 }
-.qtybutton {
+.stockbutton {
     color: #727272;
     cursor: pointer;
     float: left;
@@ -9559,7 +9559,7 @@ input.cart-plus-minus-box {
 .quickview-btn-cart {
     margin: 0 30px;
 }
-.qtybutton.inc {
+.stockbutton.inc {
     margin-top: 2px;
 }
 .price {

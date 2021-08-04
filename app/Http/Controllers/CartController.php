@@ -63,7 +63,7 @@ class CartController extends Controller
 			'id' => md5($product->id),
 			'name' => $product->name,
 			'price' => $product->price,
-			'quantity' => $params['stock'],
+			'stock' => $params['stock'],
 			'attributes' => $attributes,
 			'associatedModel' => $product,
 		];

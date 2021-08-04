@@ -16,7 +16,7 @@
 					</div>
 					<div class="cart-title">
 						<h5><a href="{{ url('product/'. $product->slug) }}">{{ $item->name }}</a></h5>
-						<span>{{ number_format($item->price) }} x {{ $item->quantity }}</span>
+						<span>{{ number_format($item->price) }} x {{ $item->stock }}</span>
 					</div>
 					<div class="cart-delete">
 						<a href="{{ url('carts/remove/'. $item->id)}}" class="delete"><i class="ti-trash"></i></a>
