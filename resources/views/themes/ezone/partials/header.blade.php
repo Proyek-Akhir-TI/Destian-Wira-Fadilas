@@ -172,7 +172,7 @@
                 </div>
                 <div class="furniture-search">
                     <form action="{{url('products')}}" method="GET">
-                        <input placeholder="Pencarian . . ." type="text" name="q" value="{{isset ($q) ? q: null}}">
+                        <input placeholder="Pencarian . . ." type="text" name="q" value="{{isset ($q) ? $q : null}}">
                         <button>
                             <i class="ti-search"></i>
                         </button>

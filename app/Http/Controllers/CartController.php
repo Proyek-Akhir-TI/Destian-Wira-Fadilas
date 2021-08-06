@@ -22,7 +22,7 @@ class CartController extends Controller
         $items = \Cart::getContent();
         $this->data['items'] =  $items;
 
-		return $this->load_theme('carts.index', $this->data);
+		return $this->loadTheme('carts.index', $this->data);
     }
 
 
@@ -63,7 +63,7 @@ class CartController extends Controller
 			'id' => md5($product->id),
 			'name' => $product->name,
 			'price' => $product->price,
-			'stock' => $params['stock'],
+			'quantity' => $params['stock'],
 			'attributes' => $attributes,
 			'associatedModel' => $product,
 		];
