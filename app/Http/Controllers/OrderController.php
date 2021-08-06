@@ -38,7 +38,7 @@ class OrderController extends Controller
 
 
 
-		return $this->load_theme('orders.checkout', $this->data);
+		return $this->loadTheme('orders.checkout', $this->data);
 	}
 
 	public function cities(Request $request)
@@ -227,6 +227,7 @@ class OrderController extends Controller
 			function () use ($params) {
 				$order = $this->_saveOrder($params);
 				$this->_saveOrderItems($order);
+				$this->_generatePaymentToken($order);
 				$this->_saveShipment($order, $params);
 	
 				return $order;
@@ -242,6 +243,40 @@ class OrderController extends Controller
 		}
 
 		return redirect('orders/checkout');
+	}
+
+	private function _generatePaymentToken($order)
+	{
+		$this->initPaymentGateway();
+
+		$customerDetails = [
+			'first_name' => $order->customer_first_name,
+			'last_name' => $order->customer_last_name,
+			'email' => $order->customer_email,
+			'phone' => $order->customer_phone,
+		];
+
+		$params = [
+			'enable_payments' => \App\Models\Payment::PAYMENT_CHANNELS,
+			'transaction_details' => [
+				'order_id' => $order->code,
+				'gross_amount' => $order->grand_total,
+			],
+			'customer_details' => $customerDetails,
+			'expiry' => [
+				'start_time' => date('Y-m-d H:i:s T'),
+				'unit' => \App\Models\Payment::EXPIRY_UNIT,
+				'duration' => \App\Models\Payment::EXPIRY_DURATION,
+			],
+		];
+
+		$snap = \Midtrans\Snap::createTransaction($params);
+		
+		if ($snap->token) {
+			$order->payment_token = $snap->token;
+			$order->payment_url = $snap->redirect_url;
+			$order->save();
+		}
 	}
 
 	/**
@@ -415,6 +450,6 @@ class OrderController extends Controller
 			->where('user_id', \Auth::user()->id)
 			->firstOrFail();
 
-		return $this->load_theme('orders/received', $this->data);
+		return $this->loadTheme('orders/received', $this->data);
 	}
 }
