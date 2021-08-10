@@ -67,6 +67,34 @@
           <li class="nav-item">
 					<a href="#" class="nav-link">
             <p>
+              Pesanan
+              <i class="right fas fa-angle-left"></i>
+            </p>
+					</a>
+					<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('admin/orders')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+								  <p>Pesanan</p>
+								</a>
+							</li>
+							<li class="nav-item">
+                <a href="{{ url('admin/orders/trashed')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sampah</p>
+								</a>
+							</li>
+              <li class="nav-item">
+                <a href="{{ url('admin/shipments')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengiriman</p>
+								</a>
+							</li>
+              </ul>
+          </li>
+          <li class="nav-item">
+					<a href="#" class="nav-link">
+            <p>
               Pengguna & Peran
               <i class="right fas fa-angle-left"></i>
             </p>

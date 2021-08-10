@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{asset('admin/assets/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin/assets/dist/css/adminlte.min.css')}}">
+
+  <link rel="stylesheet" href="{{asset('admin/assets/plugins/daterangepicker.css') }}">
   
 </head>
 <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
@@ -51,12 +53,29 @@
 <script src="{{asset('admin/assets/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/assets/dist/js/demo.js')}}"></script>
+
+<script src="{{asset('admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script>
+  $('.datepicker').datepicker({
+			format: 'yyyy-mm-dd'
+		});
+
   $(".delete").on("submit",function(){
   return confirm("Apakah Anda yakin ingin menghapusnya?");
   });
 
-  function showHideConfigurableAttributes(){
+    $("a.delete").on("click", function () {
+			event.preventDefault();
+			var orderId = $(this).attr('order-id');
+			if (confirm("Do you want to remove this?")) {
+				document.getElementById('delete-form-' + orderId ).submit();
+			}
+		});
+		$(".restore").on("click", function () {
+			return confirm("Do you want to restore this?");
+		});
+
+    function showHideConfigurableAttributes(){
     var productType = $(".product-type").val();
 
     if (productType == 'configurable'){

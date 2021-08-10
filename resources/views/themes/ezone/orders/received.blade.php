@@ -72,7 +72,7 @@
 										<td>{{ $item->name }}</td>
 										<td>{!! \General::showAttributes($item->attributes) !!}</td>
 										<td>{{ $item->stock }}</td>
-										<td>{{ \General::priceFormat($item->base_total) }}</td>
+										<td>{{ \General::priceFormat($item->base_price) }}</td>
 										<td>{{ \General::priceFormat($item->sub_total) }}</td>
 									</tr>
 								@empty
