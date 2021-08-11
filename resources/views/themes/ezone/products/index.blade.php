@@ -6,7 +6,7 @@
 			<div class="breadcrumb-content text-center">
 				<h2>Produk</h2>
 				<ul>
-					<li><a href="#">Beranda</a></li>
+					<li><a href="home">Beranda</a></li>
 					<li>produk</li>
 				</ul>
 			</div>
