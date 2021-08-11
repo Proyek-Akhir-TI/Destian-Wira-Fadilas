@@ -59,7 +59,7 @@ class Order extends Model
 	public const UNPAID = 'unpaid';
 
 	public const STATUSES = [
-		self::CREATED => 'Created',
+		self::CREATED 	=> 'Created',
 		self::CONFIRMED => 'Confirmed',
 		self::DELIVERED => 'Delivered',
 		self::COMPLETED => 'Completed',
@@ -93,6 +93,19 @@ class Order extends Model
 	public function user()
 	{
 		return $this->belongsTo('App\Models\User');
+	}
+
+	/**
+	 * Define scope forUser
+	 *
+	 * @param Eloquent $query query builder
+	 * @param User     $user  limit
+	 *
+	 * @return void
+	 */
+	public function scopeForUser($query, $user)
+	{
+		return $query->where('user_id', $user->id);
 	}
 
 	/**
