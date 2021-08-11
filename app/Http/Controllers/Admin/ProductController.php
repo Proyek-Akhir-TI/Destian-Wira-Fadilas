@@ -302,7 +302,7 @@ class ProductController extends Controller
         return view('admin.products.images', $this->data);
     }
 
-    public function add_image($id)
+    public function addImage($id)
     {
         if (empty($id)){
             return redirect('admin/products');
@@ -316,7 +316,7 @@ class ProductController extends Controller
         return view('admin.products.image_form', $this->data);
     }
 
-    public function upload_image(ProductImageRequest $request, $id)
+    public function uploadImage(ProductImageRequest $request, $id)
     {
         $product = Product::findOrFail($id);
 
@@ -325,13 +325,19 @@ class ProductController extends Controller
             $name = $product->slug . '_' . time();
             $fileName = $name . '.' . $image->getClientOriginalExtension();
 
-            $folder = '/uploads/images';
-            $filePath = $image->storeAs($folder, $fileName, 'public');
+            $folder = ProductImage::UPLOAD_DIR. '/images';
 
-            $params =  [
-                'product_id' => $product->id,
-                'path' => $filePath,
-            ];
+			$filePath = $image->storeAs($folder . '/original', $fileName, 'public');
+
+			$resizedImage = $this->_resizeImage($image, $fileName, $folder);
+
+			$params = array_merge(
+				[
+					'product_id' => $product->id,
+					'path' => $filePath,
+				],
+				$resizedImage
+			);
 
             if (ProductImage::create($params)){
                 Session::flash('success', 'Gambar telah diunggah.');
@@ -344,7 +350,59 @@ class ProductController extends Controller
         }
     }
 
-    public function remove_image($id)
+    /**
+	 * Resize image
+	 *
+	 * @param file   $image    raw file
+	 * @param string $fileName image file name
+	 * @param string $folder   folder name
+	 *
+	 * @return Response
+	 */
+	private function _resizeImage($image, $fileName, $folder)
+	{
+		$resizedImage = [];
+
+		$smallImageFilePath = $folder . '/small/' . $fileName;
+		$size = explode('x', ProductImage::SMALL);
+		list($width, $height) = $size;
+
+		$smallImageFile = \Image::make($image)->fit($width, $height)->stream();
+		if (\Storage::put('public/' . $smallImageFilePath, $smallImageFile)) {
+			$resizedImage['small'] = $smallImageFilePath;
+		}
+
+		$mediumImageFilePath = $folder . '/medium/' . $fileName;
+		$size = explode('x', ProductImage::MEDIUM);
+		list($width, $height) = $size;
+
+		$mediumImageFile = \Image::make($image)->fit($width, $height)->stream();
+		if (\Storage::put('public/' . $mediumImageFilePath, $mediumImageFile)) {
+			$resizedImage['medium'] = $mediumImageFilePath;
+		}
+
+		$largeImageFilePath = $folder . '/large/' . $fileName;
+		$size = explode('x', ProductImage::LARGE);
+		list($width, $height) = $size;
+
+		$largeImageFile = \Image::make($image)->fit($width, $height)->stream();
+		if (\Storage::put('public/' . $largeImageFilePath, $largeImageFile)) {
+			$resizedImage['large'] = $largeImageFilePath;
+		}
+
+		$extraLargeImageFilePath  = $folder . '/xlarge/' . $fileName;
+		$size = explode('x', ProductImage::EXTRA_LARGE);
+		list($width, $height) = $size;
+
+		$extraLargeImageFile = \Image::make($image)->fit($width, $height)->stream();
+		if (\Storage::put('public/' . $extraLargeImageFilePath, $extraLargeImageFile)) {
+			$resizedImage['extra_large'] = $extraLargeImageFilePath;
+		}
+
+		return $resizedImage;
+	}
+
+    public function removeImage($id)
     {
         $image = ProductImage::findOrFail($id);
 

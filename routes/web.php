@@ -42,9 +42,9 @@ Route::group(
 
         Route::resource('products', 'ProductController');
         Route::get('products/{productID}/images', 'ProductController@images')->name('products.images');
-        Route::get('products/{productID}/add-image', 'ProductController@add_image')->name('products.add_image');
-        Route::post('products/images/{productID}', 'ProductController@upload_image')->name('products.upload_image');
-        Route::delete('products/images/{imageID}', 'ProductController@remove_image')->name('products.remove_image');
+        Route::get('products/{productID}/add-image', 'ProductController@addImage')->name('products.addImage');
+		Route::post('products/images/{productID}', 'ProductController@uploadImage')->name('products.uploadImage');
+		Route::delete('products/images/{imageID}', 'ProductController@removeImage')->name('products.removeImage');
 
         Route::resource('attributes', 'AttributeController');
         Route::get('attributes/{attributeID}/options', 'AttributeController@options')->name('attributes.options');

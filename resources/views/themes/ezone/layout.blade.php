@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{ asset('themes/ezone/assets/css/bundle.css') }}">
         <link rel="stylesheet" href="{{ asset('themes/ezone/assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('themes/ezone/assets/css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('themes/ezone/assets/css/easyzoom.css') }}">
         <script src="{{ asset('themes/ezone/assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 
         <!-- CSRF Token -->
