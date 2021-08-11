@@ -157,7 +157,7 @@
 							<li>Akun : <a href="{{ url('login') }}">Masuk</a></li>
 							<li><a href="{{ url('register') }}">Daftar</a></li>
 						@else
-							<li>Halo: <a href="{{ url('users/profile') }}">{{ Auth::user()->first_name }}</a></li>
+							<li>Halo: <a href="{{ url('profile') }}">{{ Auth::user()->first_name }}</a></li>
 							<a href="{{ route('logout') }}"
 								onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">
@@ -180,8 +180,7 @@
                 </div>
                 <div class="furniture-wishlist">
                     <ul>
-                        <li><a data-toggle="modal" data-target="#exampleCompare" href="#"><i class="ti-reload"></i> Perbandingan</a></li>
-                        <li><a href="wishlist.html"><i class="ti-heart"></i> Daftar Belanja</a></li>
+                    <li><a href="{{ url('favorites') }}"><i class="ti-heart"></i> Favorit</a></li>
                     </ul>
                 </div>
             </div>

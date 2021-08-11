@@ -60,7 +60,23 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+
+    /**
+	 * Define relationship with the Product
+	 *
+	 * @return void
+	 */
     public function products(){
         return $this->hasMany('App\Models\Product');
     }
+
+    /**
+	 * Define relationship with the Favorite
+	 *
+	 * @return void
+	 */
+	public function favorites()
+	{
+		return $this->hasMany('App\Models\Favorite');
+	}
 }

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 Route::get('/products', 'ProductController@index');
 Route::get('/product/{slug}', 'ProductController@show');
+Route::get('/products/quick-view/{slug}', 'ProductController@quickView');
 
 Route::get('/carts', 'CartController@index');
 Route::get('/carts/remove/{cartID}', 'CartController@destroy');
@@ -33,6 +34,8 @@ Route::post('payments/notification', 'PaymentController@notification');
 Route::get('payments/completed', 'PaymentController@completed');
 Route::get('payments/failed', 'PaymentController@failed');
 Route::get('payments/unfinish', 'PaymentController@unfinish');
+
+Route::resource('favorites', 'FavoriteController');
 
 Route::group(
     ['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth']],

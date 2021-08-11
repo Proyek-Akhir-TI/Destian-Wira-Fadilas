@@ -17,6 +17,17 @@ function getShippingCostOptions(city_id) {
 	});
 }
 
+function getQuickView(product_slug) {
+	$.ajax({
+		type: 'GET',
+		url: '/products/quick-view/' + product_slug,
+		success: function (response) {
+			$('#exampleModal').html(response);
+			$('#exampleModal').modal();
+		}
+	});
+}
+
 (function($) {
 	$('#province-id').on('change', function (e) {
 		var province_id = e.target.value;
@@ -85,6 +96,66 @@ function getShippingCostOptions(city_id) {
 			},
 			success: function (response) {
 				$('.total-amount').html(response.data.total);
+			}
+		});
+	});
+
+	$('.quick-view').on('click', function (e) {
+		e.preventDefault();
+
+		var product_slug = $(this).attr('product-slug');
+
+		getQuickView(product_slug);
+	});
+
+	$('.add-to-card').on('click', function (e) {
+		e.preventDefault();
+
+		var product_type = $(this).attr('product-type');
+		var product_id = $(this).attr('product-id');
+		var product_slug = $(this).attr('product-slug');
+
+		if (product_type == 'configurable') {
+			getQuickView(product_slug);
+		} else {
+			$.ajax({
+				type: 'POST',
+				url: '/carts',
+				data:{
+					_token: $('meta[name="csrf-token"]').attr('content'),
+					product_id: product_id,
+					stock: 1
+				},
+				success: function (response) {
+					location.reload(true);
+				}
+			});
+		}
+	});
+
+	$('.add-to-fav').on('click', function (e) {
+		e.preventDefault();
+
+		var product_slug = $(this).attr('product-slug');
+
+		$.ajax({
+			type: 'POST',
+			url: '/favorites',
+			data:{
+				_token: $('meta[name="csrf-token"]').attr('content'),
+				product_slug: product_slug
+			},
+			success: function (response) {
+				alert(response);
+			},
+			error: function (xhr, textStatus, errorThrown) {
+				if (xhr.status == 401) {
+					$('#loginModal').modal();
+				}
+
+				if (xhr.status == 422) {
+					alert(xhr.responseText);
+				}
 			}
 		});
 	});

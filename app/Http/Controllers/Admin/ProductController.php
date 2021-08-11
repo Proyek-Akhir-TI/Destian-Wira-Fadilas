@@ -364,8 +364,8 @@ class ProductController extends Controller
 		$resizedImage = [];
 
 		$smallImageFilePath = $folder . '/small/' . $fileName;
-		$size = explode('x', ProductImage::SMALL);
-		list($width, $height) = $size;
+		$ukuran = explode('x', ProductImage::SMALL);
+		list($width, $height) = $ukuran;
 
 		$smallImageFile = \Image::make($image)->fit($width, $height)->stream();
 		if (\Storage::put('public/' . $smallImageFilePath, $smallImageFile)) {
@@ -373,8 +373,8 @@ class ProductController extends Controller
 		}
 
 		$mediumImageFilePath = $folder . '/medium/' . $fileName;
-		$size = explode('x', ProductImage::MEDIUM);
-		list($width, $height) = $size;
+		$ukuran = explode('x', ProductImage::MEDIUM);
+		list($width, $height) = $ukuran;
 
 		$mediumImageFile = \Image::make($image)->fit($width, $height)->stream();
 		if (\Storage::put('public/' . $mediumImageFilePath, $mediumImageFile)) {
@@ -382,8 +382,8 @@ class ProductController extends Controller
 		}
 
 		$largeImageFilePath = $folder . '/large/' . $fileName;
-		$size = explode('x', ProductImage::LARGE);
-		list($width, $height) = $size;
+		$ukuran = explode('x', ProductImage::LARGE);
+		list($width, $height) = $ukuran;
 
 		$largeImageFile = \Image::make($image)->fit($width, $height)->stream();
 		if (\Storage::put('public/' . $largeImageFilePath, $largeImageFile)) {
@@ -391,8 +391,8 @@ class ProductController extends Controller
 		}
 
 		$extraLargeImageFilePath  = $folder . '/xlarge/' . $fileName;
-		$size = explode('x', ProductImage::EXTRA_LARGE);
-		list($width, $height) = $size;
+		$ukuran = explode('x', ProductImage::EXTRA_LARGE);
+		list($width, $height) = $ukuran;
 
 		$extraLargeImageFile = \Image::make($image)->fit($width, $height)->stream();
 		if (\Storage::put('public/' . $extraLargeImageFilePath, $extraLargeImageFile)) {
