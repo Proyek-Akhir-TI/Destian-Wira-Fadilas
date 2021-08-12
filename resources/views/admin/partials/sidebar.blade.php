@@ -95,6 +95,40 @@
           <li class="nav-item">
 					<a href="#" class="nav-link">
             <p>
+              Laporan
+              <i class="right fas fa-angle-left"></i>
+            </p>
+					</a>
+					<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('admin/reports/revenue')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+								  <p>Pendapatan</p>
+								</a>
+							</li>
+							<li class="nav-item">
+                <a href="{{ url('admin/reports/product')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Produk</p>
+								</a>
+							</li>
+              <li class="nav-item">
+                <a href="{{ url('admin/reports/inventory')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Persediaan</p>
+								</a>
+							</li>
+              <li class="nav-item">
+                <a href="{{ url('admin/reports/payment')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pembayaran</p>
+								</a>
+							</li>
+              </ul>
+          </li>
+          <li class="nav-item">
+					<a href="#" class="nav-link">
+            <p>
               Umum
               <i class="right fas fa-angle-left"></i>
             </p>
