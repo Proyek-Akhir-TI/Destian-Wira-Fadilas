@@ -27,7 +27,7 @@ class PaymentController extends Controller
 		$order = Order::where('code', $paymentNotification->order_id)->firstOrFail();
 
 		if ($order->isPaid()) {
-			return response(['message' => 'The order has been paid before'], 422);
+			return response(['message' => 'Pesanan sudah dibayar sebelumnya.'], 422);
 		}
 
 		$transaction = $paymentNotification->transaction_status;
@@ -127,7 +127,7 @@ class PaymentController extends Controller
 			return redirect('payments/failed?order_id='. $code);
 		}
 
-		\Session::flash('success', "Thank you for completing the payment process!");
+		\Session::flash('success', "Terimakasih telah menyelesaikan pembayaran Anda.");
 
 		return redirect('orders/received/'. $order->id);
 	}
@@ -144,7 +144,7 @@ class PaymentController extends Controller
 		$code = $request->query('order_id');
 		$order = Order::where('code', $code)->firstOrFail();
 
-		\Session::flash('error', "Sorry, we couldn't process your payment.");
+		\Session::flash('error', "Maaf, kami tidak dapat memproses pembayaran Anda.");
 
 		return redirect('orders/received/'. $order->id);
 	}
@@ -161,7 +161,7 @@ class PaymentController extends Controller
 		$code = $request->query('order_id');
 		$order = Order::where('code', $code)->firstOrFail();
 
-		\Session::flash('error', "Sorry, we couldn't process your payment.");
+		\Session::flash('error', "Maaf, kami tidak dapat memproses pesanan Anda.");
 
 		return redirect('orders/received/'. $order->id);
 	}

@@ -59,11 +59,11 @@ class Order extends Model
 	public const UNPAID = 'unpaid';
 
 	public const STATUSES = [
-		self::CREATED 	=> 'Created',
-		self::CONFIRMED => 'Confirmed',
-		self::DELIVERED => 'Delivered',
-		self::COMPLETED => 'Completed',
-		self::CANCELLED => 'Cancelled',
+		self::CREATED 	=> 'Dibuat',
+		self::CONFIRMED => 'Diterima',
+		self::DELIVERED => 'Diantar',
+		self::COMPLETED => 'Selesai',
+		self::CANCELLED => 'Dibatalkan',
 	];
 	/**
 	 * Define relationship with the Shipment
@@ -123,7 +123,7 @@ class Order extends Model
 
 		$lastOrderCode = !empty($lastOrder) ? $lastOrder['last_code'] : null;
 		
-		$orderCode = $dateCode . '00002';
+		$orderCode = $dateCode . '00001';
 		if ($lastOrderCode) {
 			$lastOrderNumber = str_replace($dateCode, '', $lastOrderCode);
 			$nextOrderNumber = sprintf('%05d', (int)$lastOrderNumber + 1);

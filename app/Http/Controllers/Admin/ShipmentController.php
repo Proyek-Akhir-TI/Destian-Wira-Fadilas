@@ -96,7 +96,7 @@ class ShipmentController extends Controller
 			$this->_sendEmailOrderShipped($shipment->order);
 		}
 
-		\Session::flash('success', 'The shipment has been updated');
+		\Session::flash('success', 'Pengiriman telah berhasil diperbarui');
 		return redirect('admin/orders/'. $order->id);
 	}
 

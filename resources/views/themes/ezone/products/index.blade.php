@@ -24,10 +24,10 @@
 							<div class="shop-bar pb-60">
 								<div class="shop-found-selector">
 									<div class="shop-found">
-										<p><span>23</span> Product Found of <span>50</span></p>
+										<!-- <p><span>23</span> Product Found of <span>50</span></p> -->
 									</div>
 									<div class="shop-selector">
-										<label>Sort By : </label>
+										<label>Urutkan : </label>
 										{{ Form::select('sort', $sorts , $selectedSort ,array('onChange' => 'this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);')) }}
 									</div>
 								</div>

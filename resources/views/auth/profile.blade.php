@@ -1,7 +1,7 @@
 @extends('themes.ezone.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	<!-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
 				<h2>Register</h2>
@@ -11,8 +11,8 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="shop-page-wrapper shop-page-padding ptb-100">
+	</div> -->
+	<div class="shop-page-wrapper shop-page-padding ptb-50">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3">
@@ -127,7 +127,7 @@
 										</div>
 									</div>
 									<div class="button-box">
-										<button type="submit" class="default-btn floatright">Update Profile</button>
+										<button type="submit" class="default-btn float-right">Update Profile</button>
 									</div>
 								{!! Form::close() !!}
 							</div>

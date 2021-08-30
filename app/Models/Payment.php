@@ -25,8 +25,8 @@ class Payment extends Model
 		'bill_key',
 	];
 
-	public const PAYMENT_CHANNELS = ['credit_card', 'mandiri_clickpay', 'cimb_clicks',
-	'bca_klikbca', 'bca_klikpay', 'bri_epay', 'echannel', 'permata_va',
+	public const PAYMENT_CHANNELS = ['mandiri_clickpay',
+	'bca_klikbca', 'bca_klikpay', 'bri_epay', 'permata_va',
 	'bca_va', 'bni_va', 'other_va', 'gopay', 'indomaret',
 	'danamon_online', 'akulaku'];
 

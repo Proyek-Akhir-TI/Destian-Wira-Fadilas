@@ -7,8 +7,8 @@
                     <img src="{{ asset('themes/ezone/assets/img/icon-img/26.png') }}" alt="">
                 </div>
                 <div class="services-content">
-                    <h4>Free Shippig</h4>
-                    <p>Contrary to popular belief, Lorem Ipsum is random text. </p>
+                    <h4>Pengiriman Cepat</h4>
+                    <p>Pengiriman dapat selesai dengan cepat guna menjaga kualitas produk saat sampai di tujuan. </p>
                 </div>
             </div>
             <div class="single-services mb-40">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="services-content">
                     <h4>24/7 Support</h4>
-                    <p>Contrary to popular belief, Lorem Ipsum is random text. </p>
+                    <p>Memberikan pelayanan terbaik guna menjaga kualitas sistem jual beli. </p>
                 </div>
             </div>
             <div class="single-services mb-40">
@@ -25,8 +25,8 @@
                     <img src="{{ asset('themes/ezone/assets/img/icon-img/28.png') }}" alt="">
                 </div>
                 <div class="services-content">
-                    <h4>Secure Payments</h4>
-                    <p>Contrary to popular belief, Lorem Ipsum is random text. </p>
+                    <h4>Pembayaran Aman</h4>
+                    <p>Transaksi aman dan terpercaya. </p>
                 </div>
             </div>
         </div>

@@ -48,7 +48,7 @@ class ProfileController extends Controller
 		$user = \Auth::user();
 
 		if ($user->update($params)) {
-			\Session::flash('success', 'Your profile have been updated!');
+			\Session::flash('success', 'Profil Anda berhasil diperbarui!');
 			return redirect('profile');
 		}
 	}

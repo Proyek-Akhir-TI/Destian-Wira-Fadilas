@@ -33,7 +33,7 @@ class ProductInventory extends Model
 
 		if ($inventory->stock < $stock) {
 			$product = Product::findOrFail($productId);
-			throw new \App\Exceptions\OutOfStockException('The product '. $product->sku .' is out of stock');
+			throw new \App\Exceptions\OutOfStockException('Produk '. $product->sku .' telah habis');
 		}
 
 		$inventory->stock = $inventory->stock - $stock;

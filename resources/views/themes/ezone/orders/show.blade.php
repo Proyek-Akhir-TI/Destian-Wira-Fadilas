@@ -1,7 +1,7 @@
 @extends('themes.ezone.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	<!-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
 				<h2>My Favorites</h2>
@@ -11,8 +11,8 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="shop-page-wrapper shop-page-padding ptb-100">
+	</div> -->
+	<div class="shop-page-wrapper shop-page-padding ptb-50">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3">
@@ -66,10 +66,10 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>Item</th>
-									<th>Description</th>
-									<th>Quantity</th>
-									<th>Unit Cost</th>
+									<th>Nama Produk</th>
+									<th>Tipe</th>
+									<th>Jumlah</th>
+									<th>Harga Produk</th>
 									<th>Total</th>
 								</tr>
 							</thead>
@@ -85,11 +85,18 @@
 									</tr>
 								@empty
 									<tr>
-										<td colspan="6">Order item not found!</td>
+										<td colspan="6">Pesanan tidak ditemukan.</td>
 									</tr>
 								@endforelse
 							</tbody>
 						</table>
+						<div class="col-md-2 ml-auto">
+							<div class="cart-page-total">
+						@if (!$order->isPaid())
+							<a href="{{ $order->payment_url }}">Lanjutkan Ke Pembayaran</a>
+						@endif
+						</div>
+						</div>
 					</div>
 				</div>
 			</div>

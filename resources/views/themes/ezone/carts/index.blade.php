@@ -5,10 +5,10 @@
 	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/penjual.jpg') }})">
 		<div class="container">
 			<div class="breadcrumb-content text-center">
-				<h2>cart page</h2>
+				<h2>halaman keranjang</h2>
 				<ul>
-					<li><a href="{{ url('/') }}">home</a></li>
-					<li> cart page</li>
+					<li><a href="{{ url('/') }}">beranda</a></li>
+					<li> halaman keranjang</li>
 				</ul>
 			</div>
 		</div>
@@ -18,18 +18,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<h1 class="cart-heading">Cart</h1>
+					<h1 class="cart-heading">Keranjang</h1>
 					{!! Form::open(['url' => 'carts/update']) !!}
 						<div class="table-content table-responsive">
 							<table>
 								<thead>
 									<tr>
-										<th>remove</th>
-										<th>images</th>
-										<th>Product</th>
-										<th>Price</th>
-										<th>Quantity</th>
-										<th>Total</th>
+										<th>Hapus</th>
+										<th>Gambar</th>
+										<th>Produk</th>
+										<th>Harga</th>
+										<th>Stok</th>
+										<th>Jumlah</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -55,7 +55,7 @@
 										</tr>
 									@empty
 										<tr>
-											<td colspan="6">The cart is empty!</td>
+											<td colspan="6">Keranjang sedang kosong!</td>
 										</tr>
 									@endforelse
 								</tbody>
@@ -65,7 +65,7 @@
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="coupon-all">
 									<div class="coupon2">
-										<input class="button" name="update_cart" value="Update cart" type="submit">
+										<input class="button" name="update_cart" value="Perbarui keranjang" type="submit">
 									</div>
 								</div>
 							</div>
@@ -73,12 +73,12 @@
 						<div class="row">
 							<div class="col-md-5 ml-auto">
 								<div class="cart-page-total">
-									<h2>Cart totals</h2>
+									<h2>Jumlah Keranjang</h2>
 									<ul>
 										<li>Subtotal<span>{{ number_format(\Cart::getSubTotal()) }}</span></li>
 										<li>Total<span>{{ number_format(\Cart::getTotal()) }}</span></li>
 									</ul>
-									<a href="{{ url('orders/checkout')}}">Proceed to checkout</a>
+									<a href="{{ url('orders/checkout')}}">Melanjutkan ke checkout</a>
 								</div>
 							</div>
 						</div>

@@ -6,19 +6,19 @@
 			<div class="col-lg-12">
 				<div class="card card-default">
 					<div class="card-header card-header-border-bottom">
-						<h2>Orders</h2>
+						<h2>Pesanan</h2>
 					</div>
 					<div class="card-body">
 						@include('admin.partials.flash')
 						@include('admin.orders.filter')
 						<table class="table table-bordered table-striped">
 							<thead>
-								<th>Order ID</th>
-								<th>Grand Total</th>
-								<th>Name</th>
+								<th>ID Pesanan</th>
+								<th>Total Pembayaran</th>
+								<th>Nama</th>
 								<th>Status</th>
-								<th>Payment</th>
-								<th>Action</th>
+								<th>Pembayaran</th>
+								<th>Tindakan</th>
 							</thead>
 							<tbody>
 								@forelse ($orders as $order)
@@ -36,13 +36,13 @@
 										<td>{{ $order->payment_status }}</td>
 										<td>
 											@can('edit_orders')
-												<a href="{{ url('admin/orders/'. $order->id) }}" class="btn btn-info btn-sm">show</a>
+												<a href="{{ url('admin/orders/'. $order->id) }}" class="btn btn-info btn-sm">Lihat</a>
 											@endcan
 										</td>
 									</tr>
 								@empty
 									<tr>
-										<td colspan="5">No records found</td>
+										<td colspan="5">Tidak ditemukan data.</td>
 									</tr>
 								@endforelse
 							</tbody>

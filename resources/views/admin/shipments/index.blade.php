@@ -6,18 +6,18 @@
             <div class="col-lg-12">
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
-                        <h2>Shipments</h2>
+                        <h2>Pengiriman</h2>
                     </div>
                     <div class="card-body">
                         @include('admin.partials.flash')
                         <table class="table table-bordered table-striped">
                             <thead>
-                                <th>Order ID</th>
-                                <th>Name</th>
+                                <th>ID Pesanan</th>
+                                <th>Nama</th>
                                 <th>Status</th>
-                                <th>Total Stock</th>
-                                <th>Total Weight (gram)</th>
-                                <th>Action</th>
+                                <th>Total Stok</th>
+                                <th>Total Berat (gram)</th>
+                                <th>Tindakan</th>
                             </thead>
                             <tbody>
                                 @forelse ($shipments as $shipment)
@@ -36,13 +36,13 @@
                                         <td>{{ \General::priceFormat($shipment->total_weight) }}</td>
                                         <td>
                                             @can('edit_orders')
-                                                <a href="{{ url('admin/orders/'. $shipment->order->id) }}" class="btn btn-info btn-sm">show</a>
+                                                <a href="{{ url('admin/orders/'. $shipment->order->id) }}" class="btn btn-info btn-sm">Lihat</a>
                                             @endcan
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="5">No records found</td>
+                                        <td colspan="5">Tidak ditemukan data.</td>
                                     </tr>
                                 @endforelse
                             </tbody>

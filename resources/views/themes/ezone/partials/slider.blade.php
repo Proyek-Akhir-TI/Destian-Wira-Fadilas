@@ -5,7 +5,7 @@
 			<div class="single-slider-4 slider-height-5 bg-img" style="background-image: url({{ asset('storage/'. $slide->extra_large) }})">
 				<div class="container">
 					<div class="row">
-						<div class="ml-auto col-lg-6">
+						<div class="ml-auto col-lg-10">
 							<div class="furniture-content fadeinup-animated">
 								<h2 class="animated">{!! $slide->title !!}</h2>
 								<p class="animated">{{ $slide->body }}</p>

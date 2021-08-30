@@ -23,7 +23,7 @@
 
                     <div class="col-md-3">
                         <div class="checkbox">
-                            <label class="{{ Str::contains($perm->name, 'delete') ? 'text-danger' : '' }}">
+                            <label class="{{ Str::contains($perm->name, 'Hapus') ? 'text-danger' : '' }}">
                                 {!! Form::checkbox("permissions[]", $perm->name, $per_found, isset($options) ? $options : []) !!} {{ $perm->name }}
                             </label>
                         </div>
@@ -33,7 +33,7 @@
         </div>
         @can('edit_roles')
             <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Simpan', ['class' => 'btn btn-primary']) !!}
             </div>
         @endcan
     </div>

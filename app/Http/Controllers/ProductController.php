@@ -35,8 +35,8 @@ class ProductController extends Controller
             url('products') => 'Standar',
             url('products?sort=price-asc') => 'Harga - Rendah ke Tinggi',
             url('products?sort=price-desc') => 'Harga - Tinggi ke Rendah',
-            url('products?sort=created_at-desc') => 'Terbaru ke Terdahulu',
-            url('products?sort=created_at-asc') => 'Terdahulu ke Terbaru',
+            url('products?sort=created_at-desc') => 'Waktu - Terbaru ke Terdahulu',
+            url('products?sort=created_at-asc') => 'Waktu - Terdahulu ke Terbaru',
         ];
 
         $this->data['selectedSort'] = url('products');

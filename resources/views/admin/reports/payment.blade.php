@@ -13,12 +13,12 @@
 						@include('admin.reports.filter')
 						<table class="table table-bordered table-striped">
 							<thead>
-								<th>Order ID</th>
-								<th>Date</th>
+								<th>ID Pesanan</th>
+								<th>Tanggal</th>
 								<th>Status</th>
-								<th>Amount</th>
+								<th>Jumlah</th>
 								<th>Gateway</th>
-								<th>Payment Type</th>
+								<th>Tipe Pembayaran</th>
 								<th>Ref</th>
 							</thead>
 							<tbody>

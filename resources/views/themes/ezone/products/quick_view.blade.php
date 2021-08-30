@@ -1,11 +1,13 @@
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	<span class="pe-7s-close" aria-hidden="true"></span>
-</button>
+
 <div class="modal-dialog modal-quickview-width" role="document">
 	<div class="modal-content">
 		<div class="modal-body">
+
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		<span class="pe-7s-close" aria-hidden="true"></span>
+</button>
 			<div class="qwick-view-left">
-				<div class="quick-view-learg-img">
+				<div class="quick-view-large-img">
 					<div class="quick-view-tab-content tab-content">
 						@php
 							$i = 1
@@ -49,14 +51,14 @@
 						<span class="new">{{ number_format($product->priceLabel()) }}</span>
 						{{-- <span class="old">$120.00  </span> --}}
 					</div>
-					<p>{{ $product->short_description }}</p>
+					<p>{{ $product->description }}</p>
 					{!! Form::open(['url' => 'carts']) !!}
 						{{ Form::hidden('product_id', $product->id) }}
 						@if ($product->configurable())
 							<div class="quick-view-select">
 								<div class="select-option-part">
-									<label>ukuran*</label>
-									{!! Form::select('ukuran', $ukuran , null, ['class' => 'select', 'placeholder' => '- Please Select -', 'required' => true]) !!}
+									<label>Ukuran*</label>
+									{!! Form::select('ukuran', $ukuran , null, ['class' => 'select', 'placeholder' => '- Pilihan -', 'required' => true]) !!}
 								</div>
 							</div>
 						@endif
@@ -69,7 +71,7 @@
 								<button type="submit" class="submit contact-btn btn-hover">add to cart</button>
 							</div>
 							<div class="quickview-btn-wishlist">
-								<a class="btn-hover" href="#"><i class="pe-7s-like"></i></a>
+								<a class="btn-hover add-to-fav" product-slug="{{ $product->slug }}" href=""><i class="pe-7s-like"></i></a>
 							</div>
 						</div>
 					{!! Form::close() !!}

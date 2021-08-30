@@ -5,10 +5,10 @@
 				@if ($product->productImages->first())
 					<img src="{{ asset('storage/'.$product->productImages->first()->medium) }}" alt="{{ $product->name }}">
 				@else
-					<img src="{{ asset('themes/ezone/assets/img/product/fashion-colorful/1.jpg') }}" alt="{{ $product->name }}">
+					<img src="{{ asset('storage/'.$product->productImages->first()-small) }}" alt="{{ $product->name }}">
 				@endif
 			</a>
-			<span>hot</span>
+			
 			<div class="product-action">
 				<a class="animate-left add-to-fav" title="Favorite" product-slug="{{ $product->slug }}" href="">
 					<i class="pe-7s-like"></i>

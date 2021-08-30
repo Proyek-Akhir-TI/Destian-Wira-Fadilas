@@ -1,7 +1,7 @@
 @extends('themes.ezone.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	<!-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
 				<h2>My Favorites</h2>
@@ -11,8 +11,8 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="shop-page-wrapper shop-page-padding ptb-100">
+	</div> -->
+	<div class="shop-page-wrapper shop-page-padding ptb-50">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3">
@@ -24,11 +24,11 @@
 						<div class="table-content table-responsive">
 							<table class="table table-bordered table-striped">
 								<thead>
-									<th>Order ID</th>
-									<th>Grand Total</th>
+									<th>ID Pesanan</th>
+									<th>Total Biaya</th>
 									<th>Status</th>
-									<th>Payment</th>
-									<th>Action</th>
+									<th>Pembayaran</th>
+									<th>Tindakan</th>
 								</thead>
 								<tbody>
 									@forelse ($orders as $order)
@@ -41,12 +41,12 @@
 											<td>{{ $order->status }}</td>
 											<td>{{ $order->payment_status }}</td>
 											<td>
-												<a href="{{ url('orders/'. $order->id) }}" class="btn btn-info btn-sm">details</a>
+												<a href="{{ url('orders/'. $order->id) }}" class="btn btn-info btn-sm">Rincian</a>
 											</td>
 										</tr>
 									@empty
 										<tr>
-											<td colspan="5">No records found</td>
+											<td colspan="5">Tidak ditemukan data.</td>
 										</tr>
 									@endforelse
 								</tbody>

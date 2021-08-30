@@ -1,7 +1,7 @@
 @extends('themes.ezone.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/penjual.jpg') }})">
+	<!-- <div class="breadcrumb-area pt-205 pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/penjual.jpg') }})">
 		<div class="container">
 			<div class="breadcrumb-content text-center">
 				<h2>Rincian Produk</h2>
@@ -11,8 +11,8 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="product-details ptb-100 pb-90">
+	</div> -->
+	<div class="product-details ptb-50 pb-90">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-lg-7 col-12">
@@ -71,12 +71,12 @@
 						<div class="details-price">
 							<span>{{ number_format($product->priceLabel()) }}</span>
 						</div>
-						
+						<p>{{ $product->description }}</p>
 						{!! Form::open(['url' => 'carts']) !!}
 							{{ Form::hidden('product_id', $product->id) }}
 							@if ($product->type == 'configurable')
 								<div class="quick-view-select">
-									<div class="select-option-part">
+									<div class="select ">
 										<label>Ukuran*</label>
 										{!! Form::select('ukuran', $ukuran , null, ['class' => 'select', 'placeholder' => '- Pilihan -', 'required' => true]) !!}
 									</div>
@@ -91,7 +91,8 @@
 									<button type="submit" class="submit contact-btn btn-hover">tambahkan ke keranjang</button>
 								</div>
 								<div class="quickview-btn-wishlist">
-									<a class="btn-hover" href="#"><i class="pe-7s-like"></i></a>
+									<a class="btn-hover add-to-fav" product-slug="{{ $product->slug }}" href="#">
+									<i class="pe-7s-like"></i></a>
 								</div>
 							</div>
 						{!! Form::close() !!}
@@ -102,16 +103,28 @@
 									<li><a href="{{ url('products/category/'. $category->slug ) }}">{{ $category->name }}</a></li>
 								@endforeach
 							</ul>
-						</div>
-						<div class="product-details-cati-tag mtb-10">
+							<div class="mtb-10">
+							
+							</div>
 							<ul>
-								<li class="categories-title">Tags :</li>
-								<li><a href="#">fashion</a></li>
-								<li><a href="#">electronics</a></li>
-								<li><a href="#">toys</a></li>
-								<li><a href="#">food</a></li>
-								<li><a href="#">jewellery</a></li>
+								<li class="categories-title">Asal :</li>
+								
+									<li><a>{{ $product->origin }}</a></li>
+								
 							</ul>
+							<div class="mtb-10">
+
+							</div>
+							<ul>
+								<li class="categories-title">Berat :</li>
+								
+									<li><a>{{ $product->weight }}</a> Gram</li>
+								
+							</ul>
+						
+						</div>
+						<div class="mtb-10">
+							
 						</div>
 						<div class="product-share">
 							<ul>
@@ -131,11 +144,7 @@
 										<i class="icofont icofont-social-pinterest"></i>
 									</a>
 								</li>
-								<li>
-									<a href="#">
-										<i class="icofont icofont-social-flikr"></i>
-									</a>
-								</li>
+								
 							</ul>
 						</div>
 					</div>
@@ -147,17 +156,17 @@
 		<div class="container">
 			<div class="product-description-review text-center">
 				<div class="description-review-title nav" role=tablist>
-					<a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
+					<!-- <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
 						Description
-					</a>
+					</a> -->
 					<a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
-						Reviews (0)
+						Reviews 
 					</a>
 				</div>
 				<div class="description-review-text tab-content">
-					<div class="tab-pane active show fade" id="pro-dec" role="tabpanel">
+					<!-- <div class="tab-pane active show fade" id="pro-dec" role="tabpanel">
 						<p>{{ $product->description }} </p>
-					</div>
+					</div> -->
 					<div class="tab-pane fade" id="pro-review" role="tabpanel">
 						<a href="#">Be the first to write your review!</a>
 					</div>

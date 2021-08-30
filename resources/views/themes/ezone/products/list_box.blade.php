@@ -8,12 +8,8 @@
 					<img src="{{ asset('themes/ezone/assets/img/product/fashion-colorful/1.jpg') }}" alt="{{ $product->name }}">
 				@endif
             </a>
-            <span>hot</span>
-            <div class="product-action-list-style">
-                <a class="animate-right" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#">
-                    <i class="pe-7s-look"></i>
-                </a>
-            </div>
+
+            
         </div>
         <div class="product-content-list">
             <div class="product-list-info">

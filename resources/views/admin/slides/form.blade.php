@@ -3,7 +3,7 @@
 @section('content')
 
 @php
-	$formTitle = !empty($slide) ? 'Update' : 'New'    
+	$formTitle = !empty($slide) ? 'Perbarui' : 'Slide'    
 @endphp
 
 <div class="content">
@@ -11,7 +11,7 @@
 		<div class="col-lg-6">
 			<div class="card card-default">
 				<div class="card-header card-header-border-bottom">
-						<h2>{{ $formTitle }} Slide</h2>
+						<h2>{{ $formTitle }} Baru</h2>
 				</div>
 				<div class="card-body">
 					@include('admin.partials.flash', ['$errors' => $errors])
@@ -22,7 +22,7 @@
 						{!! Form::open(['url' => 'admin/slides', 'enctype' => 'multipart/form-data']) !!}
 					@endif
 						<div class="form-group">
-							{!! Form::label('title', 'Title') !!}
+							{!! Form::label('title', 'Judul') !!}
 							{!! Form::text('title', null, ['class' => 'form-control']) !!}
 						</div>
 						<div class="form-group">
@@ -44,8 +44,8 @@
 							{!! Form::select('status', $statuses , null, ['class' => 'form-control', 'placeholder' => '-- Set Status --']) !!}
 						</div>
 						<div class="form-footer pt-5 border-top">
-							<button type="submit" class="btn btn-primary btn-default">Save</button>
-							<a href="{{ url('admin/slides') }}" class="btn btn-secondary btn-default">Back</a>
+							<button type="submit" class="btn btn-primary btn-default">Simpan</button>
+							<a href="{{ url('admin/slides') }}" class="btn btn-secondary btn-default">Kembali</a>
 						</div>
 					{!! Form::close() !!}
 				</div>

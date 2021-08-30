@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'Edit User ' . $user->first_name)
+@section('title', 'Ubah Pengguna ' . $user->first_name)
 
 @section('content')
 <div class="content">

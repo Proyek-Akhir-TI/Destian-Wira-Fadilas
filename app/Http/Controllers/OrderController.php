@@ -109,7 +109,7 @@ class OrderController extends Controller
 		$data = [];
 		if ($selectedShipping) {
 			$status = 200;
-			$message = 'Success set shipping cost';
+			$message = 'Berhasil mengatur biaya pengiriman';
 
 			$this->_addShippingCostToCart($selectedShipping['service'], $selectedShipping['cost']);
 
@@ -117,7 +117,7 @@ class OrderController extends Controller
 
 		} else {
 			$status = 400;
-			$message = 'Failed to set shipping cost';
+			$message = 'Gagal mengatur biaya pengiriman';
 		} 
 
 		$response = [
@@ -269,7 +269,7 @@ class OrderController extends Controller
 			\Cart::clear();
 			$this->_sendEmailOrderReceived($order);
 
-			\Session::flash('success', 'Thank you. Your order has been received!');
+			\Session::flash('success', 'Terimakasih. Pesanan Anda sudah diterima!');
 			return redirect('orders/received/'. $order->id);
 		}
 

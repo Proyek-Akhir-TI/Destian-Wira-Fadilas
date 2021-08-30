@@ -1,10 +1,10 @@
 <!-- product area start -->
 @if ($products)
-	<div class="popular-product-area wrapper-padding-3 pt-115 pb-115">
+	<div class="popular-product-area wrapper-padding-3 white-bg pt-115 pb-115">
 		<div class="container-fluid">
 			<div class="section-title-6 text-center mb-50">
-				<h2>Popular Product</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+				<h3>Produk Populer</h3>
+				<p>Rekomendasi produk-produk terpopuler dan banyak dibeli untuk memberi pelayanan terbaik bagi Anda.</p>
 			</div>
 			<div class="product-style">
 				<div class="popular-product-active owl-carousel">
@@ -21,6 +21,7 @@
 										<img src="{{ asset('themes/ezone/assets/img/product/fashion-colorful/1.jpg') }}" alt="{{ $product->name }}">
 									@endif
 								</a>
+								<span>hot</span>
 								<div class="product-action">
 									<a class="animate-left add-to-fav" title="Wishlist" product-slug="{{ $product->slug }}" href="">
 										<i class="pe-7s-like"></i>

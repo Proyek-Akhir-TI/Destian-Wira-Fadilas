@@ -74,7 +74,7 @@ class CartController extends Controller
 
 		\Cart::add($item);
 
-		\Session::flash('success', 'Product '. $item['name'] .' has been added to cart');
+		\Session::flash('success', 'Produk '. $item['name'] .' telah ditambahkan ke keranjang');
 		return redirect('/product/'. $slug);
     }
 
@@ -112,7 +112,7 @@ class CartController extends Controller
 	private function _checkProductInventory($product, $itemQuantity)
 	{
 		if ($product->productInventory->stock < $itemQuantity) {
-			throw new \App\Exceptions\OutOfStockException('The product '. $product->sku .' is out of stock');
+			throw new \App\Exceptions\OutOfStockException('Produk '. $product->sku .' telah kehabisan stok');
 		}
 	}
 
@@ -153,7 +153,7 @@ class CartController extends Controller
 				]);
 			}
 
-			\Session::flash('success', 'The cart has been updated');
+			\Session::flash('success', 'Keranjang telah diperbarui');
 			return redirect('carts');
 		}
     }

@@ -2,19 +2,19 @@
 
 @section('content')
 	<!-- header end -->
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	<!-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container">
 			<div class="breadcrumb-content text-center">
-				<h2>Checkout Page</h2>
+				<h2>Halaman Checkout</h2>
 				<ul>
 					<li><a href="{{ url('/') }}">home</a></li>
-					<li> Checkout Page</li>
+					<li>Halaman Checkout</li>
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- checkout-area start -->
-	<div class="checkout-area ptb-100">
+	<div class="checkout-area ptb-50">
 		<div class="container">
 			@include('admin.partials.flash', ['$errors' => $errors])
 
@@ -22,64 +22,64 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-12 col-12">
 					<div class="checkbox-form">						
-						<h3>Billing Details</h3>
+						<h3>Rincian Tagihan</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>First Name <span class="required">*</span></label>										
+									<label>Nama Depan <span class="required">*</span></label>										
 									{!! Form::text('first_name', null, ['required' => true]) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Last Name <span class="required">*</span></label>										
+									<label>Nama Belakang <span class="required">*</span></label>										
 									{!! Form::text('last_name', null, ['required' => true]) !!}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="checkout-form-list">
-									<label>Company Name</label>
+									<label>Nama Perusahaan</label>
 									{!! Form::text('company') !!}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="checkout-form-list">
-									<label>Address <span class="required">*</span></label>
-									{!! Form::text('address1', null, ['required' => true, 'placeholder' => 'Home number and street name']) !!}
+									<label>Alamat <span class="required">*</span></label>
+									{!! Form::text('address1', null, ['required' => true, 'placeholder' => 'Nomor rumah dan nama jalan']) !!}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="checkout-form-list">
-									{!! Form::text('address2', null, ['placeholder' => 'Apartment, suite, unit etc. (optional)']) !!}
+									{!! Form::text('address2', null, ['placeholder' => 'Apartemen, Hotel, dsb. (opsional)']) !!}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="checkout-form-list">
-									<label>Province<span class="required">*</span></label>
-									{!! Form::select('province_id', $provinces, Auth::user()->province_id, ['id' => 'province-id', 'placeholder' => '- Please Select - ', 'required' => true]) !!}
+									<label>Provinsi<span class="required">*</span></label>
+									{!! Form::select('province_id', $provinces, Auth::user()->province_id, ['id' => 'province-id', 'placeholder' => '- Pilih Provinsi - ', 'required' => true]) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>City<span class="required">*</span></label>
-									{!! Form::select('city_id', $cities, null, ['id' => 'city-id', 'placeholder' => '- Please Select -', 'required' => true])!!}
+									<label>Kota<span class="required">*</span></label>
+									{!! Form::select('city_id', $cities, null, ['id' => 'city-id', 'placeholder' => '- Pilih Kota -', 'required' => true])!!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Postcode / Zip <span class="required">*</span></label>										
-									{!! Form::number('postcode', null, ['required' => true, 'placeholder' => 'Postcode']) !!}
+									<label>Kode Pos <span class="required">*</span></label>										
+									{!! Form::number('postcode', null, ['required' => true, 'placeholder' => 'Kode Pos']) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Phone  <span class="required">*</span></label>										
-									{!! Form::text('phone', null, ['required' => true, 'placeholder' => 'Phone']) !!}
+									<label>Telepon  <span class="required">*</span></label>										
+									{!! Form::text('phone', null, ['required' => true, 'placeholder' => 'Telepon']) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Email Address </label>										
+									<label>Alamat Email</label>										
 									{!! Form::text('email', null, ['placeholder' => 'Email', 'readonly' => true]) !!}
 								</div>
 							</div>							
@@ -87,7 +87,7 @@
 						<div class="different-address">
 							<div class="ship-different-title">
 								<h3>
-									<label>Ship to a different address?</label>
+									<label>Kirim ke alamat lain?</label>
 									<input id="ship-box" type="checkbox" name="ship_to"/>
 								</h3>
 							</div>
@@ -95,55 +95,55 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>First Name <span class="required">*</span></label>										
+											<label>Nama Depan <span class="required">*</span></label>										
 											{!! Form::text('shipping_first_name') !!}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Last Name <span class="required">*</span></label>										
+											<label>Nama Belakang <span class="required">*</span></label>										
 											{!! Form::text('shipping_last_name') !!}
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="checkout-form-list">
-											<label>Company Name</label>
+											<label>Nama Perusahaan</label>
 											{!! Form::text('shipping_company') !!}
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="checkout-form-list">
-											<label>Address <span class="required">*</span></label>
-											{!! Form::text('shipping_address1', null, ['placeholder' => 'Home number and street name']) !!}
+											<label>Alamat <span class="required">*</span></label>
+											{!! Form::text('shipping_address1', null, ['placeholder' => 'Nomor rumah dan nama jalan']) !!}
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="checkout-form-list">
-											{!! Form::text('shipping_address2', null, ['placeholder' => 'Apartment, suite, unit etc. (optional)']) !!}
+											{!! Form::text('shipping_address2', null, ['placeholder' => 'Apartemen, Hotel, dsb. (opsional)']) !!}
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="checkout-form-list">
-											<label>Province<span class="required">*</span></label>
-											{!! Form::select('shipping_province_id', $provinces, null, ['id' => 'shipping-province', 'placeholder' => '- Please Select - ']) !!}
+											<label>Provinsi<span class="required">*</span></label>
+											{!! Form::select('shipping_province_id', $provinces, null, ['id' => 'shipping-province', 'placeholder' => '- Pilihan - ']) !!}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>City<span class="required">*</span></label>
-											{!! Form::select('shipping_city_id', [], null, ['id' => 'shipping-city','placeholder' => '- Please Select -'])!!}
+											<label>Kota<span class="required">*</span></label>
+											{!! Form::select('shipping_city_id', [], null, ['id' => 'shipping-city','placeholder' => '- Pilihan -'])!!}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Postcode / Zip <span class="required">*</span></label>										
-											{!! Form::number('shipping_postcode', null, ['placeholder' => 'Postcode']) !!}
+											<label>Kode Pos <span class="required">*</span></label>										
+											{!! Form::number('shipping_postcode', null, ['placeholder' => 'Kode Pos']) !!}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Phone  <span class="required">*</span></label>										
-											{!! Form::text('shipping_phone', null, ['placeholder' => 'Phone']) !!}
+											<label>Telepon  <span class="required">*</span></label>										
+											{!! Form::text('shipping_phone', null, ['placeholder' => 'Telepon']) !!}
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -156,8 +156,8 @@
 							</div>
 							<div class="order-notes">
 								<div class="checkout-form-list mrg-nn">
-									<label>Order Notes</label>
-									{!! Form::textarea('note', null, ['cols' => 30, 'rows' => 10,'placeholder' => 'Notes about your order, e.g. special notes for delivery.']) !!}
+									<label>Catatan Pesanan</label>
+									{!! Form::textarea('note', null, ['cols' => 30, 'rows' => 10,'placeholder' => 'Catatan tentang pesanan Anda, misalnya catatan khusus untuk pengiriman.']) !!}
 								</div>									
 							</div>
 						</div>													
@@ -165,12 +165,12 @@
 				</div>	
 				<div class="col-lg-6 col-md-12 col-12">
 					<div class="your-order">
-						<h3>Your order</h3>
+						<h3>Pesanan Anda</h3>
 						<div class="your-order-table table-responsive">
 							<table>
 								<thead>
 									<tr>
-										<th class="product-name">Product</th>
+										<th class="product-name">Produk</th>
 										<th class="product-total">Total</th>
 									</tr>							
 								</thead>
@@ -182,7 +182,7 @@
 										@endphp
 										<tr class="cart_item">
 											<td class="product-name">
-												{{ $item->name }}	<strong class="product-stock"> × {{ $item->stock }}</strong>
+												{{ $item->name }}	<strong class="product-quantity"> x {{ $item->quantity }}</strong>
 											</td>
 											<td class="product-total">
 												<span class="amount">{{ number_format(\Cart::get($item->id)->getPriceSum()) }}</span>
@@ -190,7 +190,7 @@
 										</tr>
 									@empty
 										<tr>
-											<td colspan="2">The cart is empty! </td>
+											<td colspan="2">Keranjang kosong! </td>
 										</tr>
 									@endforelse
 								</tbody>
@@ -200,15 +200,15 @@
 										<td><span class="amount">{{ number_format(\Cart::getSubTotal()) }}</span></td>
 									</tr>
 									<tr class="cart-subtotal">
-										<th>Tax</th>
+										<th>Pajak</th>
 										<td><span class="amount">{{ number_format(\Cart::getCondition('TAX 10%')->getCalculatedValue(\Cart::getSubTotal())) }}</span></td>
 									</tr>
 									<tr class="cart-subtotal">
-										<th>Shipping Cost ({{ $totalWeight }} kg)</th>
+										<th>Biaya Pengiriman ({{ $totalWeight }} kg)</th>
 										<td><select id="shipping-cost-option" required name="shipping_service"></select></td>
 									</tr>
 									<tr class="order-total">
-										<th>Order Total</th>
+										<th>Total Pesanan</th>
 										<td><strong><span class="total-amount">{{ number_format(\Cart::getTotal()) }}</span></strong>
 										</td>
 									</tr>								
@@ -220,37 +220,21 @@
 								<div class="panel-group" id="faq">
 									<div class="panel panel-default">
 										<div class="panel-heading">
-											<h5 class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#faq" href="#payment-1">Direct Bank Transfer.</a></h5>
+											<h5 class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#faq" href="#payment-1">CATATAN.</a></h5>
 										</div>
 										<div id="payment-1" class="panel-collapse collapse show">
+										<div class="panel-body">
+												<p>*Pilihlah Jasa Pengiriman Tercepat Guna Menjaga Kualitas Produk.</p>
+											</div>
 											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+												<p>Lakukan pembayaran Anda langsung ke rekening bank kami. Silakan gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai pembayaran berhasil sampai di akun kami.</p>
 											</div>
 										</div>
 									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h5 class="panel-title"><a class="collapsed" data-toggle="collapse" aria-expanded="false" data-parent="#faq" href="#payment-2">Cheque Payment</a></h5>
-										</div>
-										<div id="payment-2" class="panel-collapse collapse">
-											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-											</div>
-										</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h5 class="panel-title"><a class="collapsed" data-toggle="collapse" aria-expanded="false" data-parent="#faq" href="#payment-3">PayPal</a></h5>
-										</div>
-										<div id="payment-3" class="panel-collapse collapse">
-											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-											</div>
-										</div>
-									</div>
+									
 								</div>
 								<div class="order-button-payment">
-									<input type="submit" value="Place order" />
+									<input type="submit" value="Lanjutkan pembayaran" />
 								</div>								
 							</div>
 						</div>

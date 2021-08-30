@@ -6,12 +6,12 @@
 				<div id="slider-range"></div>
 				<div class="price_slider_amount">
 					<div class="label-input">
-						<label>price : </label>
+						<label>harga : </label>
 						<input type="text" id="amount" name="price"  placeholder="Add Your Price" style="width:170px" />
 						<input type="hidden" id="productMinPrice" value="{{ $minPrice }}"/>
 						<input type="hidden" id="productMaxPrice" value="{{ $maxPrice }}"/>
 					</div>
-					<button type="submit">Urutkan</button> 
+					<button type="submit" >Urutkan</button> 
 				</div>
 			</div>
 		</div>

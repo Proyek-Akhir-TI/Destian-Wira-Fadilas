@@ -153,7 +153,7 @@ class OrderController extends Controller
 			}
 		);
 
-		\Session::flash('success', 'The order has been cancelled');
+		\Session::flash('success', 'Pesanan berhasil dibatalkan.');
 
 		return redirect('admin/orders');
 	}
@@ -171,7 +171,7 @@ class OrderController extends Controller
 		$order = Order::findOrFail($id);
 		
 		if (!$order->isDelivered()) {
-			\Session::flash('error', 'Mark as complete the order can be done if the latest status is delivered');
+			\Session::flash('error', 'Menandai sebagai pesanan telah selesai tidak dapat dilakukan jika status masih dalam pengiriman.');
 			return redirect('admin/orders');
 		}
 
@@ -180,7 +180,7 @@ class OrderController extends Controller
 		$order->approved_at = now();
 		
 		if ($order->save()) {
-			\Session::flash('success', 'The order has been marked as completed!');
+			\Session::flash('success', 'Pesanan telah ditandai sebagai telah selesai!');
 			return redirect('admin/orders');
 		}
 	}
@@ -208,9 +208,9 @@ class OrderController extends Controller
 			);
 
 			if ($canDestroy) {
-				\Session::flash('success', 'The order has been removed permanently');
+				\Session::flash('success', 'Pesanan telah dihapus permanen.');
 			} else {
-				\Session::flash('success', 'The order could not be removed permanently');
+				\Session::flash('success', 'Pesanan tidak dapat dihapus permanen.');
 			}
 
 			return redirect('admin/orders/trashed');
@@ -230,9 +230,9 @@ class OrderController extends Controller
 			);
 			
 			if ($canDestroy) {
-				\Session::flash('success', 'The order has been removed');
+				\Session::flash('success', 'Pesanan berhasil dihapus.');
 			} else {
-				\Session::flash('success', 'The order could not be removed');
+				\Session::flash('success', 'Pesanan tidak dapat dihapus.');
 			}
 
 			return redirect('admin/orders');
@@ -273,11 +273,11 @@ class OrderController extends Controller
 		);
 
 		if ($canRestore) {
-			\Session::flash('success', 'The order has been restored');
+			\Session::flash('success', 'Pesanan berhasil dikembalikan.');
 			return redirect('admin/orders');
 		} else {
 			if (!\Session::has('error')) {
-				\Session::flash('error', 'The order could not be restored');
+				\Session::flash('error', 'Pesanan tidak dapat dikembalikan.');
 			}
 			return redirect('admin/orders/trashed');
 		}

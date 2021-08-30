@@ -1,7 +1,7 @@
 @extends('themes.ezone.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	<!-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
 				<h2>My Favorites</h2>
@@ -11,8 +11,8 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="shop-page-wrapper shop-page-padding ptb-100">
+	</div> -->
+	<div class="shop-page-wrapper shop-page-padding ptb-50">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3">
@@ -25,10 +25,10 @@
 							<table>
 								<thead>
 									<tr>
-										<th>remove</th>
-										<th>Image</th>
-										<th>Product</th>
-										<th>Price</th>
+										<th>Hapus</th>
+										<th>Gambar</th>
+										<th>Produk</th>
+										<th>Harga</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -53,7 +53,7 @@
 										</tr>
 									@empty
 										<tr>
-											<td colspan="4">You have no favorite product</td>
+											<td colspan="4">Anda tidak memiliki produk favorit.</td>
 										</tr>
 									@endforelse
                                 </tbody>

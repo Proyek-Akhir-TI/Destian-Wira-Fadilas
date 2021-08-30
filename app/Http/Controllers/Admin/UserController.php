@@ -61,9 +61,9 @@ class UserController extends Controller
             if ($user = User::create($request->except('roles', 'permissions'))) {
                 $this->syncPermissions($request, $user);
 
-                Session::flash('success', 'User has been created');
+                Session::flash('success', 'Pengguna berhasil dibuat.');
             } else {
-                Session::flash('error', 'Unable to create user');
+                Session::flash('error', 'Pengguna tidak dapat dibuat.');
             }
         });
 

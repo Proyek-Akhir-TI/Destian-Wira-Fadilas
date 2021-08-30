@@ -52,7 +52,7 @@ class SlideController extends Controller
 		$slide = Slide::findOrFail($id);
 
 		if (!$slide->prevSlide()) {
-			\Session::flash('error', 'Invalid position');
+			\Session::flash('error', 'Kesalahan posisi');
 			return redirect('admin/slides');
 		}
 
@@ -85,7 +85,7 @@ class SlideController extends Controller
 		$slide = Slide::findOrFail($id);
 
 		if (!$slide->nextSlide()) {
-			\Session::flash('error', 'Invalid position');
+			\Session::flash('error', 'Kesalahan posisi');
 			return redirect('admin/slides');
 		}
 
@@ -149,9 +149,9 @@ class SlideController extends Controller
 		$params['position'] = Slide::max('position') + 1;
 
 		if (Slide::create($params)) {
-			\Session::flash('success', 'Slide has been created');
+			\Session::flash('success', 'Slide telah berhasil dibuat');
 		} else {
-			\Session::flash('error', 'Slide could not be created');
+			\Session::flash('error', 'Slide tidak dapat dibuat');
 		}
 
 		return redirect('admin/slides');
@@ -221,7 +221,7 @@ class SlideController extends Controller
 
 		$slide = Slide::findOrFail($id);
 		if ($slide->update($params)) {
-			\Session::flash('success', 'Slide has been updated.');
+			\Session::flash('success', 'Slide telah berhasil diperbarui.');
 		}
 
 		return redirect('admin/slides');
@@ -239,7 +239,7 @@ class SlideController extends Controller
 		$slide  = Slide::findOrFail($id);
 
 		if ($slide->delete()) {
-			\Session::flash('success', 'Slide has been deleted');
+			\Session::flash('success', 'Slide telah berhasil dihapus');
 		}
 
 		return redirect('admin/slides');
