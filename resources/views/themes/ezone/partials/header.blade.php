@@ -11,19 +11,12 @@
                 <div class="menu-style-2 furniture-menu menu-hover">
                     <nav>
                         <ul>
-                            <li><a href="{{ url('products') }}">beranda</a>
-                                
-                            </li>
-                            </li>
-                            <li><a href="/">populer</a>
-                                
-                            </li>
-                            <li><a href="blog.html">tentang kami</a>
-                                
-                            </li>
+                            <li><a href="{{ url('products') }}">beranda</a></li>
+                            <li><a href="/">populer</a></li>
+                            <li><a href="blog.html">tentang kami</a></li>
                             <li><a href="#contact" class="page-scroll">kontak</a></li>
-
                             <li><a href="{{ url('profile') }}">akun</a>
+                            <li><a href="{{ url('shops/create') }}">toko</a></li>
                         </ul>
                     </nav>
                 </div>

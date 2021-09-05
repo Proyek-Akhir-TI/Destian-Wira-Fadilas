@@ -51,6 +51,11 @@ class Permission extends \Spatie\Permission\Models\Permission
 			'add_slides',
 			'edit_slides',
 			'delete_slides',
+
+            'view_shops',
+            'add_shops',
+            'edit_shops',
+            'delete_shops',
         ];
     }
 }

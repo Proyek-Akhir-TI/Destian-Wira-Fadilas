@@ -18,6 +18,9 @@ Route::get('/products', 'ProductController@index');
 Route::get('/product/{slug}', 'ProductController@show');
 Route::get('/products/quick-view/{slug}', 'ProductController@quickView');
 
+Route::get('/shops/create','ShopController@create');
+Route::post('/shops/create','ShopController@store');
+
 Route::get('/carts', 'CartController@index');
 Route::get('/carts/remove/{cartID}', 'CartController@destroy');
 Route::post('/carts','CartController@store');
@@ -65,6 +68,8 @@ Route::group(
 
         Route::resource('roles', 'RoleController');
         Route::resource('users', 'UserController');
+
+        Route::resource('shops', 'ShopController');
 
         Route::get('orders/trashed', 'OrderController@trashed');
 		Route::get('orders/restore/{orderID}', 'OrderController@restore');

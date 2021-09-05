@@ -4,7 +4,7 @@
 
 
 @php
-    $formTitle = !empty($category)? 'Update' : 'Kategori'
+    $formTitle = !empty($category)? 'Perbarui' : 'Kategori'
 @endphp
 
     <div class="content">
@@ -12,7 +12,7 @@
             <div class="col-lg-6">
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
-                        <h2>{{$formTitle}} Baru</h2>
+                        <h2>{{$formTitle}} Kategori</h2>
                     </div>
                     <div class="card-body">
                         @include('admin.partials.flash',['$errors'=>$errors])

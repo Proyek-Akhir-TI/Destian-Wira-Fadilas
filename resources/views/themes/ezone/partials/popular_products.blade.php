@@ -1,6 +1,6 @@
 <!-- product area start -->
 @if ($products)
-	<div class="popular-product-area wrapper-padding-3 white-bg pt-115 pb-115">
+	<div class="popular-product-area wrapper-padding-3 white-bg pt-55 pb-115">
 		<div class="container-fluid">
 			<div class="section-title-6 text-center mb-50">
 				<h3>Produk Populer</h3>

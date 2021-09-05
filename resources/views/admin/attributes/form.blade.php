@@ -3,7 +3,7 @@
 @section('content')
     
 @php
-    $formTitle = !empty($attribute) ? 'Update' : 'Atribut';
+    $formTitle = !empty($attribute) ? 'Perbarui' : 'Atribut';
     $disableInput = !empty($attribute) ? true : false;
 @endphp
 
@@ -12,7 +12,7 @@
         <div class="col-lg-6">
             <div class="card card-default">
                 <div class="card-header card-header-border-bottom">
-                        <h2>{{ $formTitle }} Baru</h2>
+                        <h2>{{ $formTitle }} Atribut</h2>
                 </div>
                 <div class="card-body">
                     @include('admin.partials.flash', ['$errors' => $errors])

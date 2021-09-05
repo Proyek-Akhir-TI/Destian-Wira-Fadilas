@@ -14,7 +14,7 @@
         <div class="col-lg-9">
             <div class="card card-default">
                 <div class="card-header card-header-border-bottom">
-                        <h2>{{ $formTitle }} Baru</h2>
+                        <h2>{{ $formTitle }} Produk</h2>
                 </div>
                 <div class="card-body">
                     @include('admin.partials.flash', ['$errors' => $errors])

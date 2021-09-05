@@ -6601,7 +6601,7 @@ a.icon-cart-furniture.food-cart span {
     color: rgb(20, 20, 20);
     font-size: 14px;
     line-height: 1;
-    margin-top: 25px;
+    margin-top: 10px;
     padding: 12px 36px 10px;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
@@ -9591,4 +9591,10 @@ input.cart-plus-minus-box {
 }
 .modal-content .close:hover {
     color: #006400;
+}
+
+/* 25. Store style */
+.store-area .container> h2 {
+    color: #000000;
+    margin-bottom: 30px;
 }

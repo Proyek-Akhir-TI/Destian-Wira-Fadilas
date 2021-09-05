@@ -74,7 +74,7 @@ class CartController extends Controller
 
 		\Cart::add($item);
 
-		\Session::flash('success', 'Produk '. $item['name'] .' telah ditambahkan ke keranjang');
+		\Session::flash('success', 'Produk '. $item['name'] .' telah ditambahkan ke keranjang.');
 		return redirect('/product/'. $slug);
     }
 
@@ -153,7 +153,7 @@ class CartController extends Controller
 				]);
 			}
 
-			\Session::flash('success', 'Keranjang telah diperbarui');
+			\Session::flash('success', 'Keranjang telah diperbarui.');
 			return redirect('carts');
 		}
     }

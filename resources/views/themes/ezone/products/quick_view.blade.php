@@ -1,11 +1,10 @@
-
 <div class="modal-dialog modal-quickview-width" role="document">
 	<div class="modal-content">
 		<div class="modal-body">
 
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		<span class="pe-7s-close" aria-hidden="true"></span>
-</button>
+		</button>
 			<div class="qwick-view-left">
 				<div class="quick-view-large-img">
 					<div class="quick-view-tab-content tab-content">

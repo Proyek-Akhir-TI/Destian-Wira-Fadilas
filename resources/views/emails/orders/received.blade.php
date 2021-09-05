@@ -34,9 +34,9 @@ Your order is on-hold until we confirm payment has been received. Your order det
 <br> Postcode: {{ $order->shipment->postcode }}
 
 @component('mail::button', ['url' => url('orders/received/'. $order->id)])
-Show order detail
+Lihat Rincian Pesanan
 @endcomponent
 
-Thanks,<br>
+Terimakasih,<br>
 {{ config('app.name') }}
 @endcomponent
