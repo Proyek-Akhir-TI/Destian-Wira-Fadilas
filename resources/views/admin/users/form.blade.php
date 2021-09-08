@@ -1,8 +1,14 @@
 <!-- Name Form Input -->
 <div class="form-group @if ($errors->has('name')) has-error @endif">
-    {!! Form::label('name', 'Nama') !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nama']) !!}
-    @if ($errors->has('name')) <p class="help-block">{{ $errors->first('name') }}</p> @endif
+    {!! Form::label('first_name', 'Nama Depan') !!}
+    {!! Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'Nama Depan']) !!}
+    @if ($errors->has('first_name')) <p class="help-block">{{ $errors->first('first_name') }}</p> @endif
+</div>
+
+<div class="form-group @if ($errors->has('name')) has-error @endif">
+    {!! Form::label('last_name', 'Nama Belakang') !!}
+    {!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Nama Belakang']) !!}
+    @if ($errors->has('last_name')) <p class="help-block">{{ $errors->first('last_name') }}</p> @endif
 </div>
 
 <!-- email Form Input -->
@@ -15,7 +21,7 @@
 <!-- password Form Input -->
 <div class="form-group @if ($errors->has('password')) has-error @endif">
     {!! Form::label('password', 'Kata Sandi') !!}
-    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+    {!! Form::text('password', null,['class' => 'form-control', 'placeholder' => 'Kata Sandi', 'disabled' => !empty($user)]) !!}
     @if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
 </div>
 

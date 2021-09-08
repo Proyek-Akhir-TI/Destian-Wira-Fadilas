@@ -64,6 +64,7 @@ class ShopController extends Controller
             'description' => $request->input('description'),
             'city_id'     => $request->input('city_id'),
             'province_id' => $request->input('province_id'),
+            'roles' => 'required|min:1'
         ]);
 
 
