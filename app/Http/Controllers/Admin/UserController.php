@@ -123,7 +123,7 @@ class UserController extends Controller
         $this->data['user'] = User::find($id);
         $this->data['roles'] = Role::pluck('name', 'id');
         $this->data['permissions'] = Permission::all('name', 'id');
-
+        
         return view('admin.users.edit', $this->data);
     }
 
@@ -138,9 +138,8 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'first_name' => 'bail|required|min:2',
-            'last_name' => 'bail|min:2',
+            
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'required|min:6',
             'roles' => 'required|min:1'
         ]);
 

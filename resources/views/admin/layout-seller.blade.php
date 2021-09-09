@@ -32,7 +32,7 @@
 <!-- Site wrapper -->
 <div class="page-wrapper">
   <!-- Navbar -->
-  @include('admin.partials.header')
+  @include('admin.partials.header-seller')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

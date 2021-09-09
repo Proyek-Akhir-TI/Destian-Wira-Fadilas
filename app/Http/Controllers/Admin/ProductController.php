@@ -26,14 +26,14 @@ class ProductController extends Controller
     use Authorizable;
 
     public function __construct(){
-        // parent::__construct();
-
+        parent::__construct();
+        $this->middleware('auth');
         // $this->data['currentAdminMenu'] = 'catalog';
         // $this->data['currentAdminSubMenu'] = 'product';
 
         $this->data['statuses'] = Product::statuses();
         $this->data['types'] = Product::types();
-    }
+    }   
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +41,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $this->data['products'] = Product::orderBy('name', 'ASC')->paginate(10);
+        $products = Product::forUser(\Auth::user())
+			->orderBy('created_at', 'DESC')
+			->paginate(10);
+        $this->data['products'] = $products;
 
         return view('admin.products.index', $this->data);
     }

@@ -61,8 +61,8 @@
 <script src="{{asset('admin/assets/dist/js/demo.js')}}"></script>
 
 <script src="{{ URL::asset('admin/assets/plugins/daterangepicker/moment.min.js') }}"></script>
-	<script src="{{ URL::asset('admin/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
-	<script src="{{ URL::asset('admin/assets/plugins/toastr/toastr.min.js') }}"></script>
+<script src="{{ URL::asset('admin/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ URL::asset('admin/assets/plugins/toastr/toastr.min.js') }}"></script>
 
 <script src="{{ URL::asset('admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 

@@ -98,6 +98,10 @@
 						{!! Form::close() !!}
 						<div class="product-details-cati-tag mt-35">
 							<ul>
+							<h4>{{ $product->user->first_name }}</h4><h4>{{ $product->user->last_name }}</h4>
+							<div class="mtb-10">
+							
+							</div>
 								<li class="categories-title">Kategori :</li>
 								@foreach ($product->categories as $category)
 									<li><a href="{{ url('products/category/'. $category->slug ) }}">{{ $category->name }}</a></li>
@@ -118,14 +122,24 @@
 							<ul>
 								<li class="categories-title">Berat :</li>
 								
-									<li><a>{{ $product->weight }}</a> Gram</li>
+									<li><a>{{ $product->weight /1000}}</a> Kilogram</li>
+								
+							</ul>
+
+							<div class="mtb-10">
+
+							</div>
+							<ul>
+								<li class="categories-title">Stok :</li>
+								
+									<li><a>{{ $product->productInventory->stock }}</a></li>
 								
 							</ul>
 						
 						</div>
 						<div class="mtb-10">
 							
-						</div>
+						<!-- </div>
 						<div class="product-share">
 							<ul>
 								<li class="categories-title">Bagikan :</li>
@@ -146,7 +160,7 @@
 								</li>
 								
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

@@ -31,6 +31,9 @@ class ShopController extends Controller
 
     public function index(Request $request)
 	{
+        if(auth()->user()->hasRole('seller')) {
+            $query->where('user_id', auth()->id());
+        }
         $this->data['shops']=Shop::orderBy('name', 'ASC')->paginate(10);
 
 		return view('admin.shops.index', $this->data);

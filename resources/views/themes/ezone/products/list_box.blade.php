@@ -13,7 +13,8 @@
         </div>
         <div class="product-content-list">
             <div class="product-list-info">
-                <h4><a href="{{ url('product/'. $product->slug) }}">{{ $product->name }}</a></h4>
+                <span><h4><a href="{{ url('product/'. $product->slug) }}">{{ $product->name }}</a></h4></span>
+                <h6><a>{{ $product->user->first_name }} - </a><a>{{ $product->origin }}</a></h6>
                 <span>{{ number_format($product->priceLabel()) }}</span>
                 <p>{!! $product->description !!}</p>
             </div>

@@ -17,6 +17,7 @@
                             <li><a href="#contact" class="page-scroll">kontak</a></li>
                             <li><a href="{{ url('profile') }}">akun</a>
                             <li><a href="{{ url('shops/create') }}">toko</a></li>
+                            <li><a href="{{ url('admin/products') }}">katalog</a></li>
                         </ul>
                     </nav>
                 </div>

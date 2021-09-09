@@ -49,6 +49,11 @@ class Product extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+	public function scopeForUser($query, $user)
+	{
+		return $query->where('user_id', $user->id);
+	}
+
     /**
 	 * Define relationship with the ProductInventory
 	 *
@@ -56,7 +61,7 @@ class Product extends Model
 	 */
     public function productInventory()
     {
-        return $this->hasOne('App\Models\ProductInventory');
+        return $this->hasOne('App\Models\ProductInventory', 'product_id');
     }
 
     /**

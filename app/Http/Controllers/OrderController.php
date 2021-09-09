@@ -276,8 +276,7 @@ class OrderController extends Controller
 		return redirect('orders/checkout');
 	}
 
-	private function _generatePaymentToken($order)
-	{
+	private function _generatePaymentToken($order) {
 		$this->initPaymentGateway();
 
 		$customerDetails = [

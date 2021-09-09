@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\ProductAttributeValue;
 use App\Models\AttributeOption;
 use App\Models\Category;
+use App\Models\ProductInventory;
 
 use Str;
 
@@ -149,7 +150,8 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = Product::active()->where('slug', $slug)->first();
-
+        // dd($product->productInventory);
+        
         if (!$product) {
             return redirect('products');
         }

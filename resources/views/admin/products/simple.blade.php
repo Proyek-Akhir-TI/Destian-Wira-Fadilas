@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-4">
         <div class="form-group">
-            {!! Form::label('weight', 'Berat') !!}
+            {!! Form::label('weight', 'Berat (Gram)') !!}
             {!! Form::text('weight', null, ['class' => 'form-control', 'placeholder' => 'Berat']) !!}
         </div>
     </div>

@@ -10,9 +10,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{url('profile')}}" class="nav-link">Akun</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{url('/admin/products')}}" class="nav-link">Seller</a>
-      </li>
+      
     </ul>
 
     <!-- Right navbar links -->
