@@ -28,9 +28,9 @@ class Product extends Model
 	public const INACTIVE = 2;
 
 	public const STATUSES = [
-		self::DRAFT => 'draft',
-		self::ACTIVE => 'active',
-		self::INACTIVE => 'inactive',
+		self::DRAFT => 'proses',
+		self::ACTIVE => 'aktif',
+		self::INACTIVE => 'tidak aktif',
 	];
 
 	public const SIMPLE = 'simple';

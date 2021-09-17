@@ -50,7 +50,9 @@
 						<span class="new">{{ number_format($product->priceLabel()) }}</span>
 						{{-- <span class="old">$120.00  </span> --}}
 					</div>
-					<p>{{ $product->description }}</p>
+					<span>{{ $product->description }}</span>
+					<p>Stok : <a>{{ $product->productInventory->stock }}</a></p>
+
 					{!! Form::open(['url' => 'carts']) !!}
 						{{ Form::hidden('product_id', $product->id) }}
 						@if ($product->configurable())
@@ -64,10 +66,10 @@
 
 						<div class="quickview-plus-minus">
 							<div class="cart-plus-minus">
-								{!! Form::number('stock', 1, ['class' => 'cart-plus-minus-box', 'placeholder' => 'stock', 'min' => 1]) !!}
+								{!! Form::number('stock', 1, ['class' => 'cart-plus-minus-box-quick', 'placeholder' => 'stock', 'min' => 1]) !!}
 							</div>
 							<div class="quickview-btn-cart">
-								<button type="submit" class="submit contact-btn btn-hover">add to cart</button>
+								<button type="submit" class="submit contact-btn btn-hover">tambah ke keranjang</button>
 							</div>
 							<div class="quickview-btn-wishlist">
 								<a class="btn-hover add-to-fav" product-slug="{{ $product->slug }}" href=""><i class="pe-7s-like"></i></a>

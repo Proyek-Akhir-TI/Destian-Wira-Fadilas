@@ -9519,6 +9519,18 @@ input.cart-plus-minus-box {
     text-align: center;
     width: 25px;
 }
+
+input.cart-plus-minus-box-quick {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    float: left;
+    font-size: 16px;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 65px;
+}
 .cart-plus-minus *::-moz-selection {
     background: transparent none repeat scroll 0 0;
     color: #333;

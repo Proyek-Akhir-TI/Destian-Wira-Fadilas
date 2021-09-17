@@ -16,7 +16,7 @@
                     @include('admin.partials.flash')
                     <table class="table table-bordered table-striped">
                         <thead>
-                            <th>#</th>
+                            <th>ID</th>
                             <th>Gambar</th>
                             <th>Waktu Unggah</th>
                             <th>Tindakan</th>

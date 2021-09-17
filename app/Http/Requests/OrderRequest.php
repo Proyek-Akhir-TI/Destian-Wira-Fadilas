@@ -32,9 +32,11 @@ class OrderRequest extends FormRequest
 			'province_id' => 'required|numeric',
 			'city_id' => 'required|numeric',
 			'postcode' => 'required|numeric',
-			'phone' => 'required',
+			'phone' => 'required|numeric',
 			'shipping_service' => 'required|string',
 		];
+
+		
 
 		$shipTo = $this->get('ship_to');
 
@@ -57,5 +59,8 @@ class OrderRequest extends FormRequest
 		}
 
 		return $rules;
+	}
+	public function messages(){
+		return ['address1.required'=> 'Harus diisi.'];
 	}
 }

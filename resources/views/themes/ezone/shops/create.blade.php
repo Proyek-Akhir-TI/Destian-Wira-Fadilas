@@ -10,6 +10,8 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
                 <div class="form-group">
+                <div class="checkout-form-list">
+                <label>Nama Toko<span class="required">*</span></label>
                 {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nama Toko', 'required' => true]) !!}
 				@error('name')
 				<span class="invalid-feedback" role="alert">
@@ -17,14 +19,18 @@
 				</span>
 				@enderror
                 </div>
+                </div>
 
                 <div class="form-group">
+                <div class="checkout-form-list">
+                <label>Deskripsi<span class="required">*</span></label>
                 {!! Form::textArea('description', null, ['class' => 'form-control', 'placeholder' => 'Deskripsi', 'required' => true]) !!}
 				@error('description')
 				<span class="invalid-feedback" role="alert">
 				<strong>{{ $message }}</strong>
 				</span>
 				@enderror
+                </div>
                 </div>
 
                 <div class="form-group">

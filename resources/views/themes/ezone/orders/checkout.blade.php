@@ -26,14 +26,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Nama Depan <span class="required">*</span></label>										
-									{!! Form::text('first_name', null, ['required' => true]) !!}
+									<label for="first_name">Nama Depan <span class="required">*</span></label>										
+ 									<input type="text" name="first_name" class="form-control" id="first_name" placeholder="Nama depan" required oninvalid="this.setCustomValidity('Masukkan nama depan!')" oninput="setCustomValidity('')">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Nama Belakang <span class="required">*</span></label>										
-									{!! Form::text('last_name', null, ['required' => true]) !!}
+									<label>Nama Belakang</label>										
+									{!! Form::text('last_name') !!}
 								</div>
 							</div>
 							<div class="col-md-12">
@@ -44,8 +44,8 @@
 							</div>
 							<div class="col-md-12">
 								<div class="checkout-form-list">
-									<label>Alamat <span class="required">*</span></label>
-									{!! Form::text('address1', null, ['required' => true, 'placeholder' => 'Nomor rumah dan nama jalan']) !!}
+									<label>Alamat <span class="required" >*</span></label>
+									<input type="text" name="address1" class="form-control" id="address1" placeholder="Nomor rumah dan nama jalan" required oninvalid="this.setCustomValidity('Masukkan alamat!')" oninput="setCustomValidity('')">
 								</div>
 							</div>
 							<div class="col-md-12">
@@ -62,25 +62,25 @@
 							<div class="col-md-6">
 								<div class="checkout-form-list">
 									<label>Kota<span class="required">*</span></label>
-									{!! Form::select('city_id', $cities, null, ['id' => 'city-id', 'placeholder' => '- Pilih Kota -', 'required' => true])!!}
+									{!! Form::select('city_id', $cities, null, ['id' => 'city-id', 'placeholder' => '- Pilih Kota/Kabupaten -', 'required' => true])!!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
 									<label>Kode Pos <span class="required">*</span></label>										
-									{!! Form::number('postcode', null, ['required' => true, 'placeholder' => 'Kode Pos']) !!}
+									<input type="text" name="postcode" class="form-control" id="postcode" placeholder="Kode pos" required oninvalid="this.setCustomValidity('Masukkan kode pos!')" oninput="setCustomValidity('')">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
 									<label>Telepon  <span class="required">*</span></label>										
-									{!! Form::text('phone', null, ['required' => true, 'placeholder' => 'Telepon']) !!}
+									<input type="tel" name="phone" class="form-control" id="phone" placeholder="Nomor telepon" required oninvalid="this.setCustomValidity('Masukkan nomor telepon!')" oninput="setCustomValidity('')">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Alamat Email</label>										
-									{!! Form::text('email', null, ['placeholder' => 'Email', 'readonly' => true]) !!}
+									<label>Email <span class="required">*</span></label>										
+									<input type="email" name="email" class="form-control" id="email" placeholder="Alamat email" required oninvalid="this.setCustomValidity('Masukkan email!')" oninput="setCustomValidity('')">
 								</div>
 							</div>							
 						</div>
@@ -227,7 +227,7 @@
 												<p>*Pilihlah Jasa Pengiriman Tercepat Guna Menjaga Kualitas Produk.</p>
 											</div>
 											<div class="panel-body">
-												<p>Lakukan pembayaran Anda langsung ke rekening bank kami. Silakan gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai pembayaran berhasil sampai di akun kami.</p>
+												<p>Lakukan pembayaran Anda langsung ke rekening bank kami. Silahkan gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai pembayaran berhasil sampai di akun kami.</p>
 											</div>
 										</div>
 									</div>

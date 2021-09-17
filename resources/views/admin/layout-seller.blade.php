@@ -9,6 +9,7 @@
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('admin/assets/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
@@ -18,6 +19,7 @@
 
   <link href="{{ URL::asset('admin/assets/plugins/daterangepicker/daterangepicker.css') }}" rel="stylesheet" />
 
+  <link id="sleek-css" rel="stylesheet" href="{{ URL::asset('admin/assets/css/sleek.css') }}" />
   <link id="bsdp-css" rel="stylesheet" href="{{ URL::asset('admin/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}">
 
   
@@ -79,12 +81,12 @@
     $("a.delete").on("click", function () {
 			event.preventDefault();
 			var orderId = $(this).attr('order-id');
-			if (confirm("Do you want to remove this?")) {
+			if (confirm("Apakah Anda yakin ingin menghapusnya?")) {
 				document.getElementById('delete-form-' + orderId ).submit();
 			}
 		});
 		$(".restore").on("click", function () {
-			return confirm("Do you want to restore this?");
+			return confirm("Apakah Anda yakin ingin mengembalikan ini?");
 		});
 
     function showHideConfigurableAttributes(){

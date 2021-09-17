@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{asset('admin/assets/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin/assets/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/assets/dist/css/adminlte.min.css')}}">
 
   <link href="{{ URL::asset('admin/assets/plugins/toastr/toastr.min.css') }}" rel="stylesheet" />
 
@@ -60,7 +61,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/assets/dist/js/demo.js')}}"></script>
 
-<script src="{{ URL::asset('admin/assets/plugins/daterangepicker/moment.min.js') }}"></script>
+<script src="{{ URL::asset('admin/assets/plugins/moment/moment.min.js') }}"></script>
 <script src="{{ URL::asset('admin/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <script src="{{ URL::asset('admin/assets/plugins/toastr/toastr.min.js') }}"></script>
 

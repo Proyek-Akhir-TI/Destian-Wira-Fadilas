@@ -85,10 +85,10 @@
 
 							<div class="quickview-plus-minus">
 								<div class="cart-plus-minus">
-									{!! Form::number('stock', 1, ['class' => 'cart-plus-minus-box', 'placeholder' => 'stock', 'min' => 1]) !!}
+									{!! Form::text('stock', 1, ['class' => 'cart-plus-minus-box', 'placeholder' => 'stock', 'min' => 1]) !!}
 								</div>
 								<div class="quickview-btn-cart">
-									<button type="submit" class="submit contact-btn btn-hover">tambahkan ke keranjang</button>
+									<button type="submit" class="submit contact-btn btn-hover">tambah ke keranjang</button>
 								</div>
 								<div class="quickview-btn-wishlist">
 									<a class="btn-hover add-to-fav" product-slug="{{ $product->slug }}" href="#">
@@ -122,7 +122,7 @@
 							<ul>
 								<li class="categories-title">Berat :</li>
 								
-									<li><a>{{ $product->weight /1000}}</a> Kilogram</li>
+									<li><a>{{ $product->weight /1000}}</a> Kilogram / Pack</li>
 								
 							</ul>
 

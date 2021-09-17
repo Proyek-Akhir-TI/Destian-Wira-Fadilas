@@ -26,7 +26,7 @@ class ReportController extends Controller
 	public function __construct()
 	{
 		parent::__construct();
-
+		
 		// $this->data['currentAdminMenu'] = 'report';
 
 		$this->data['exports'] = [

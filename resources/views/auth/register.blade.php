@@ -11,7 +11,8 @@
 
             <div>
                 <x-jet-label for="first_name" value="{{ __('Nama Depan') }}" />
-                <x-jet-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first_name" />
+                <x-jet-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first_name" oninvalid="this.setCustomValidity('Harap masukkan nama depan.')"
+ oninput="setCustomValidity('')"/>
             </div>
 
             <div class="mt-4">
@@ -21,17 +22,20 @@
 
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required oninvalid="this.setCustomValidity('Harap masukkan email.')"
+ oninput="setCustomValidity('')"/>
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Kata Sandi') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" oninvalid="this.setCustomValidity('Harap masukkan kata sandi.')"
+ oninput="setCustomValidity('')"/>
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password_confirmation" value="{{ __('Konfirmasi Kata Sandi') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" oninvalid="this.setCustomValidity('Harap masukkan konfirmasi kata sandi.')"
+ oninput="setCustomValidity('')"/>
             </div>
 
             

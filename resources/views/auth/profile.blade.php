@@ -28,7 +28,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-6">
-											{!! Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'First name', 'required' => true]) !!}
+											{!! Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'Nama depan', 'required' => true]) !!}
 											@error('first_name')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
 											@enderror
 										</div>
 										<div class="col-md-6">
-											{!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Last name', 'required' => true]) !!}
+											{!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Nama belakang', 'required' => true]) !!}
 											@error('last_name')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-12">
-											{!! Form::text('company', null, ['placeholder' => 'Company']) !!}
+											{!! Form::text('company', null, ['placeholder' => 'Perusahaan']) !!}
 											@error('company')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-12">
-											{!! Form::text('address1', null, ['required' => true, 'placeholder' => 'Home number and street name']) !!}
+											{!! Form::text('address1', null, ['required' => true, 'placeholder' => 'Nomor rumah dan nama jalan']) !!}
 											@error('address1')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -69,7 +69,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-12">
-											{!! Form::text('address2', null, ['placeholder' => 'Apartment, suite, unit etc. (optional)']) !!}
+											{!! Form::text('address2', null, ['placeholder' => 'Apartemen, Hotel, dsb. (opsional)']) !!}
 											@error('address2')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -80,7 +80,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-6">
-											{!! Form::select('province_id', $provinces, Auth::user()->province_id, ['id' => 'user-province-id', 'placeholder' => '- Please Select - ', 'required' => true]) !!}
+											{!! Form::select('province_id', $provinces, Auth::user()->province_id, ['id' => 'user-province-id', 'placeholder' => '- Provinsi - ', 'required' => true]) !!}
 											@error('province_id')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -88,7 +88,7 @@
 											@enderror
 										</div>
 										<div class="col-md-6">
-											{!! Form::select('city_id', $cities, null, ['id' => 'user-city-id', 'placeholder' => '- Please Select -', 'required' => true])!!}
+											{!! Form::select('city_id', $cities, null, ['id' => 'user-city-id', 'placeholder' => '- Kota/Kabupaten -', 'required' => true])!!}
 											@error('city_id')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -99,7 +99,7 @@
 
 									<div class="form-group row">
 										<div class="col-md-6">
-											{!! Form::number('postcode', null, ['required' => true, 'placeholder' => 'Postcode']) !!}
+											{!! Form::number('postcode', null, ['required' => true, 'placeholder' => 'Kode pos']) !!}
 											@error('postcode')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -107,7 +107,7 @@
 											@enderror
 										</div>
 										<div class="col-md-6">
-											{!! Form::text('phone', null, ['required' => true, 'placeholder' => 'Phone']) !!}
+											{!! Form::text('phone', null, ['required' => true, 'placeholder' => 'Nomor telepon']) !!}
 											@error('phone')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -127,7 +127,7 @@
 										</div>
 									</div>
 									<div class="button-box">
-										<button type="submit" class="default-btn float-right">Update Profile</button>
+										<button type="submit" class="default-btn float-right">Perbarui Profil</button>
 									</div>
 								{!! Form::close() !!}
 							</div>

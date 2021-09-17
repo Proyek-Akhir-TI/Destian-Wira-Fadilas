@@ -60,7 +60,7 @@
 									<th>#</th>
 									<th>Produk</th>
 									<th>Variasi</th>
-									<th>Jumlah</th>
+									<th>Kuantitas</th>
 									<th>Harga</th>
 									<th>Total</th>
 								</tr>

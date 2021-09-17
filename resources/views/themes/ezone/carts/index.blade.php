@@ -28,7 +28,7 @@
 										<th>Gambar</th>
 										<th>Produk</th>
 										<th>Harga</th>
-										<th>Stok</th>
+										<th>Kuantitas</th>
 										<th>Jumlah</th>
 									</tr>
 								</thead>

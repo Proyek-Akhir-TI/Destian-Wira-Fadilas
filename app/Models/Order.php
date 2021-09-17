@@ -47,16 +47,16 @@ class Order extends Model
 
 	protected $appends = ['customer_full_name'];
 	
-	public const CREATED = 'created';
-	public const CONFIRMED = 'confirmed';
-	public const DELIVERED = 'delivered';
-	public const COMPLETED = 'completed';
-	public const CANCELLED = 'cancelled';
+	public const CREATED = 'dibuat';
+	public const CONFIRMED = 'diterima';
+	public const DELIVERED = 'dikirim';
+	public const COMPLETED = 'selesai';
+	public const CANCELLED = 'dibatalkan';
 
 	public const ORDERCODE = 'INV';
 
-	public const PAID = 'paid';
-	public const UNPAID = 'unpaid';
+	public const PAID = 'sudah dibayar';
+	public const UNPAID = 'belum dibayar';
 
 	public const STATUSES = [
 		self::CREATED 	=> 'Dibuat',

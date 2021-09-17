@@ -12,7 +12,7 @@
                         @include('admin.partials.flash')
                         <table class="table table-bordered table-striped">
                             <thead>
-                                <th>#</th>
+                                <th>ID</th>
                                 <th>SKU</th>
                                 <th>Tipe</th>
                                 <th>Nama</th>

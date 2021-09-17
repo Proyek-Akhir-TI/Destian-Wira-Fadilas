@@ -46,18 +46,18 @@ class OrderController extends Controller
 		$endDate = $request->input('end');
 
 		if ($startDate && !$endDate) {
-			\Session::flash('error', 'The end date is required if the start date is present');
+			\Session::flash('error', 'Tanggal akhir diperlukan jika tanggal awal telah tersedia.');
 			return redirect('admin/orders');
 		}
 
 		if (!$startDate && $endDate) {
-			\Session::flash('error', 'The start date is required if the end date is present');
+			\Session::flash('error', 'Tanggal awal diperlukan jika tanggal akhir telah tersedia.');
 			return redirect('admin/orders');
 		}
 
 		if ($startDate && $endDate) {
 			if (strtotime($endDate) < strtotime($startDate)) {
-				\Session::flash('error', 'The end date should be greater or equal than start date');
+				\Session::flash('error', 'Tanggal akhir harus lebih besar atau sama dengan tanggal awal.');
 				return redirect('admin/orders');
 			}
 

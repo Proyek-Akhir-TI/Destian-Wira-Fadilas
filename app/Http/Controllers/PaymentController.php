@@ -17,7 +17,7 @@ class PaymentController extends Controller
 		$validSignatureKey = hash("sha512", $notification->order_id . $notification->status_code . $notification->gross_amount . env('MIDTRANS_SERVER_KEY'));
 
 		if ($notification->signature_key != $validSignatureKey) {
-			return response(['message' => 'Invalid signature'], 403);
+			return response(['message' => 'Tanda kesalahan.'], 403);
 		}
 
 		$this->initPaymentGateway();
@@ -101,7 +101,7 @@ class PaymentController extends Controller
 			);
 		}
 
-		$message = 'Payment status is : '. $paymentStatus;
+		$message = 'Status pembayaran : '. $paymentStatus;
 
 		$response = [
 			'code' => 200,

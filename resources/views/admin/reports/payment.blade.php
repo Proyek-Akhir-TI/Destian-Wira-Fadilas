@@ -6,7 +6,7 @@
 			<div class="col-lg-12">
 				<div class="card card-default">
 					<div class="card-header card-header-border-bottom">
-						<h2>Payment Report</h2>
+						<h2>Laporan Pembayaran</h2>
 					</div>
 					<div class="card-body">
 						@include('admin.partials.flash')
@@ -17,7 +17,7 @@
 								<th>Tanggal</th>
 								<th>Status</th>
 								<th>Jumlah</th>
-								<th>Gateway</th>
+								<th>Portal Pembayaran</th>
 								<th>Tipe Pembayaran</th>
 								<th>Ref</th>
 							</thead>
@@ -34,7 +34,7 @@
 									</tr>
 								@empty
 									<tr>
-										<td colspan="8">No records found</td>
+										<td colspan="8">Tidak ditemukan data.</td>
 									</tr>
 								@endforelse
 							</tbody>

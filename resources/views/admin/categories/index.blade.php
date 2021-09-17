@@ -12,18 +12,18 @@
                         @include('admin.partials.flash')
                         <table class="table table-bordered table-striped">
                             <thead>
-                                <th>#</th>
+                                <th>ID</th>
                                 <th>Nama</th>
-                                <th>Slug</th>
+                                
                                 <th>Parent</th>
-                                <th>Tindakan</th>
+                                <th style="width:15%">Tindakan</th>
                             </thead>
                             <tbody>
                                 @forelse ($categories as $category)
                                 <tr>
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
-                                <td>{{$category->slug}}</td>
+                                
                                 <td>{{$category->parent ? $category->parent->name : ''}}</td>
                                 <td>
                                     

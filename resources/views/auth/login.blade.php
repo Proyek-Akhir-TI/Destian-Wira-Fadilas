@@ -17,12 +17,14 @@
 
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus oninvalid="this.setCustomValidity('Harap masukkan email.')"
+                oninput="setCustomValidity('')" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Kata Sandi') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" oninvalid="this.setCustomValidity('Harap masukkan kata sandi.')"
+                oninput="setCustomValidity('')" />
             </div>
 
             <div class="block mt-4">
